@@ -62,7 +62,7 @@ var almacen = {
         									}        
 									},
 	/*FUNCION PARA ELIMINAR EN BASE DE DATOS*/
-		eliminarUsuarios: function(tx){
+	eliminarUsuarios: function(tx){
 			almacen.db = window.openDatabase("ItaMUDB","1.0","ItaMUV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarUsuariosQuery, almacen.error, almacen.Correcto);
@@ -70,7 +70,7 @@ var almacen = {
 									eliminarUsuariosQuery: function(tx){
 									tx.executeSql("DELETE FROM usuarios");
 	},
-			leerinformacionUsuario: function(tx){
+	leerinformacionUsuario: function(tx){
 			almacen.db = window.openDatabase("ItaMUDB","1.0","ItaMUV1 Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
 			almacen.db.transaction(almacen.leerinfoUsuario, almacen.error, null);
@@ -119,7 +119,7 @@ var almacen = {
 		window.localStorage.setItem("origen",origenf);
 		$("#lblorigenactual").text("Tu Ubicación: " + window.localStorage.getItem("origen"));
 		$("#txtcubo").val("");
- 		window.location.href = '#IngresoCubo';
+ 		window.location.href = '#Registro';
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
