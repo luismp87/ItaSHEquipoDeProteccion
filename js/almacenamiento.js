@@ -17,7 +17,7 @@ var almacen = {
 									},
 		/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerNumeroUsuarios: function(){  
-			almacen.db = window.openDatabase("ItaMUDB","1.0","ItaMUV1 Storage",20000);    
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);    
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);    
 			almacen.db.transaction(almacen.ConsultaNumeroDeUsuario, almacen.error, null);  
 		},
@@ -46,7 +46,7 @@ var almacen = {
 /*FUNCION PARA GUARDAR EN BASE DE DATOS*/
 	guardarUsuario: function(myArray){		
 		almacen.myArray	= myArray;        
-			almacen.db = window.openDatabase("ItaMUDB","1.0","ItaMUV1 Storage",20000);
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
 			almacen.db.transaction(almacen.GuardarUsuario, almacen.error, null);
 			
 		},
@@ -63,7 +63,7 @@ var almacen = {
 									},
 	/*FUNCION PARA ELIMINAR EN BASE DE DATOS*/
 	eliminarUsuarios: function(tx){
-			almacen.db = window.openDatabase("ItaMUDB","1.0","ItaMUV1 Storage",20000);
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
 			almacen.db.transaction(almacen.eliminarUsuariosQuery, almacen.error, almacen.Correcto);
 		},
@@ -71,7 +71,7 @@ var almacen = {
 									tx.executeSql("DELETE FROM usuarios");
 	},
 	leerinformacionUsuario: function(tx){
-			almacen.db = window.openDatabase("ItaMUDB","1.0","ItaMUV1 Storage",20000);
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
 			almacen.db.transaction(almacen.leerinfoUsuario, almacen.error, null);
 
