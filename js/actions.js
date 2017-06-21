@@ -93,5 +93,5 @@ var fn = {
     }
 
 };
-$(fn.init);
-//$(fn.ready);
+//$(fn.init);
+$(fn.ready);
