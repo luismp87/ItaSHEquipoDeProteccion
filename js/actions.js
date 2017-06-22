@@ -22,7 +22,7 @@ var fn = {
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL);   
         $('#BtnSalir').tap(fn.SalirYRestablecer);        
-        $('btnGuardarReg').tap(fn.btnGuardarReg);  
+        $('#btnGuardarReg').tap(fn.GuardarReg);  
         
         //PARA MOVIL
         //document.addEventListener("online", fn.btnMigrarUsuarios(), false);
@@ -97,7 +97,7 @@ var fn = {
          window.localStorage.setItem("user",'');
          window.location.href = '#login';   
     },
-    btnGuardarReg: function()
+    GuardarReg: function()
     {
     navigator.notification.alert("entro 0",null,"Error","Aceptar");   
         fn.puesto_trabajo = $('#textPUESTO_TRABAJO').val();
