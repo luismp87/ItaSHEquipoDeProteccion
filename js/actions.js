@@ -99,6 +99,7 @@ var fn = {
     },
     btnGuardarReg: function()
     {
+    navigator.notification.alert("entro 0",null,"Error","Aceptar");   
         fn.puesto_trabajo = $('#textPUESTO_TRABAJO').val();
         fn.numero_empleado = $('#textNUMERO_EMPLEADO').val();
         fn.area = $('#textAREA').val();
