@@ -20,7 +20,8 @@ var fn = {
         window.location.href = '#Registro';     
         }
         //PARA MOVIL
-        $('#btnautentificar').tap(fn.autentificarSQL);        
+        $('#btnautentificar').tap(fn.autentificarSQL);   
+        $('#BtnSalir').tap(fn.SalirYRestablecer);        
         
         
         //PARA MOVIL
@@ -90,6 +91,11 @@ var fn = {
         {
             return true;
         }
+    },
+    SalirYRestablecer: function()
+    {
+         window.localStorage.setItem("user",'');
+         window.location.href = '#login';   
     }
 
 };
