@@ -58,6 +58,7 @@ var almacen = {
 										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined))
 										    	{
 										    		tx.executeSql("INSERT INTO usuarios (usuario,pass,origen) VALUES ('"+almacen.myArray[i]+"')");
+										    		$('#Origenes').append(new Option('Foo', 'foo', true, true));
     											}
         									}        
 									},
