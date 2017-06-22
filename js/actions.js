@@ -117,7 +117,7 @@ var fn = {
         if(navigator.connection.type != Connection.NONE)
             {
 
-
+                server.sincronizar(fn.puesto_trabajo, fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta);//Enviar a servidor                
             }
 
     }
