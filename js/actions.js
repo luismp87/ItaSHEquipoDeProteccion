@@ -8,7 +8,8 @@ var fn = {
         {          
         fn.btnMigrarUsuarios();  
         }
-        ////////////
+        
+        $("#NumUsuarios").hide();
  
         if(fn.estaRegistrado() == false)
         {

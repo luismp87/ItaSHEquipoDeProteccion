@@ -97,7 +97,7 @@ var almacen = {
 	{
 		window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
-		$("#textORIGEN").text("Origen de usuario:<br>" + window.localStorage.getItem("origen"));
+		$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen")toUpperCase());
 		//$("#txtcubo").val("");
  		window.location.href = '#Registro';
 	}
