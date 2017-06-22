@@ -97,7 +97,7 @@ var almacen = {
 	{
 		window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
-		$("#textORIGEN").text("Entrega de equipo de protección del origen:<br>" + window.localStorage.getItem("origen"));
+		$("#textORIGEN").text("Origen de usuario:<br>" + window.localStorage.getItem("origen"));
 		//$("#txtcubo").val("");
  		window.location.href = '#Registro';
 	}
