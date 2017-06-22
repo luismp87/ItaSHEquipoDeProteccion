@@ -16,8 +16,8 @@ var fn = {
         }
         else
         {
-        //$("#lblorigenactual").text("Tu Ubicación: " + window.localStorage.getItem("origen"));
-        window.location.href = '#IngresoCubo';     
+        $("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+        window.location.href = '#Registro';     
         }
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL);        
