@@ -43,7 +43,7 @@ server.origen = origen;
 
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarregextintores',				
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg',				
                 data: { puesto_trabajo: puesto_trabajo, 
 					numero_empleado: numero_empleado,
 					area: area,
@@ -60,7 +60,7 @@ $.ajax({
 					observaciones: observaciones,
 					usuario: usuario,
 					origen: origen,
-					fecha_alta: fecha_alta},
+					fechaderegistro: fechaderegistro},
                 dataType: "json",
 				success: function (msg){
 					$.mobile.loading("hide");
