@@ -35,8 +35,9 @@ text-align: center;
 	color: red !important;
 }
 
-#MARCAR{
-	color: green !important;
+#btnGuardarRegHidra{
+	color: white !important;
+  background-color: green !important;
 }
 
 
