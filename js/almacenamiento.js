@@ -82,32 +82,12 @@ var almacen = {
 									var encontroUsuario = 0;
 									var usuariof = "";
 									var origenf = "";
-											for(i = 0; i < t.rows.length; i++){
+											for(i = 0; i < t.rows.length; i++)
+							{
 							encontroUsuario= 1;
 							usuariof = t.rows.item(i).usuario;
 							origenf = t.rows.item(i).origen;
-							/*$("#pPLANTA").text(t.rows.item(i).planta);
-							$("#pUBICACION").text(t.rows.item(i).ubicacion);
-                            $("#pCAPACIDAD").text(t.rows.item(i).capacidad);
-                            $("#pCLASE").text(t.rows.item(i).clase);
-                            $("#pAGENTE").text(t.rows.item(i).agente);
-                            $("#pMARCA").text(t.rows.item(i).marca);
-                            $("#pFRECARGA").text(t.rows.item(i).frecarga);
-                            $("#pFFABRICACION").text(t.rows.item(i).ffabricacion);
-                            $("#pFPROXSERVICIO").text(t.rows.item(i).fproxservicio);  */                 
-										
-
-												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
-																			   + "Días: " + t.rows.item(i).di + "\n"
-																			   + "Tipo de Habitación: " + t.rows.item(i).th,
-																			  function(btn){
-																				  if(btn == 1) navigator.vibrate(500);
-																				  if(btn == 2) navigator.notification.beep(1);
-																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
-												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
-												//alert("id_ext: " + t.rows.item(i).id_ext);
-												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
-											}
+							}
 
 	if(encontroUsuario == 0)
 	{
@@ -117,7 +97,7 @@ var almacen = {
 	{
 		window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
-		//$("#lblorigenactual").text("Tu Ubicación: " + window.localStorage.getItem("origen"));
+		$("#textORIGEN").text("Entrega de equipo de protección del origen:<br>" + window.localStorage.getItem("origen"));
 		//$("#txtcubo").val("");
  		window.location.href = '#Registro';
 	}
