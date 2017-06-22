@@ -28,13 +28,13 @@
                                  <tr>       
                                     <td colspan="2"><input type="submit" value="Autentificar" id="btnautentificar">
 
-                                    <ul data-role="listview">
+                                    <!--<ul data-role="listview">
                                     <li>
                                     <select id="Origenes">
                                                   
                                     </select>
                                     </li>
-                                    </ul>
+                                    </ul>-->
 
                                     </td>
                                 </tr>                                
@@ -58,7 +58,7 @@
                     </li>
 
                     <li><b>Área:</b>
-                        <input type="text" class="entrada_texto" id="textOBSERVACIONES" placeholder="Observaciones">
+                        <input type="text" class="entrada_texto" id="textAREA" placeholder="Área">
                     </li>
 
                     <li><b>Botas de seguridad:</b>
@@ -124,6 +124,13 @@
                         </select>
                     </li>
 
+                    <li><b>Otros:</b>
+                        <select id="textOTROS">
+                            <option value="No" selected="selected">No</option>
+                            <option value="Si">Si</option>                      
+                        </select>
+                    </li>
+
                     <li><b>Observaciones:</b>
                         <input type="text" class="entrada_texto" id="textOBSERVACIONES" placeholder="Observaciones">
                     </li>
@@ -138,7 +145,7 @@
 
                                     <div data-role="popup" id="myPopup" class="ui-content">
       <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-     <a href="#" class="parpadea" id="btnGuardarRegHidra">Guardar Registro</a>
+     <a href="#" class="parpadea" id="btnGuardarReg">Guardar Registro</a>
     </div>
 
 

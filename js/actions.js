@@ -22,7 +22,7 @@ var fn = {
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL);   
         $('#BtnSalir').tap(fn.SalirYRestablecer);        
-        
+        $('btnGuardarReg').tap(fn.btnGuardarReg);  
         
         //PARA MOVIL
         //document.addEventListener("online", fn.btnMigrarUsuarios(), false);
@@ -96,6 +96,30 @@ var fn = {
     {
          window.localStorage.setItem("user",'');
          window.location.href = '#login';   
+    },
+    btnGuardarReg: function()
+    {
+        fn.puesto_trabajo = $('#textPUESTO_TRABAJO').val();
+        fn.numero_empleado = $('#textNUMERO_EMPLEADO').val();
+        fn.area = $('#textAREA').val();
+        fn.botas_seguridad = $('#textBOTAS_SEGURIDAD').val();
+        fn.casco = $('#textCASCO').val();
+        fn.guantes = $('#textGUANTES').val();
+        fn.faja = $('#textFAJA').val();
+        fn.gafas = $('#textGAFAS').val();
+        fn.respirador_3m_6200 = $('#textRESPIRADOR3M6200').val();
+        fn.respirador_3m_8210 = $('#textRESPIRADOR3M8210').val();
+        fn.tapones_auditivos = $('#textTAPONESAUDITIVOS').val();
+        fn.munequeras = $('#textMUNEQUERAS').val();
+        fn.otros = $('#textOTROS').val();
+        fn.observaciones = $('#textOBSERVACIONES').val();
+
+        if(navigator.connection.type != Connection.NONE)
+            {
+
+
+            }
+
     }
 
 };
