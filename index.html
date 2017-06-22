@@ -27,7 +27,7 @@
                                 </tr>
                                  <tr>       
                                     <td colspan="2"><input type="submit" value="Autentificar" id="btnautentificar">
-                                    
+
                                     </td>
                                 </tr>                                
                                 </table>
@@ -124,9 +124,16 @@
 <div data-role="footer" data-position="fixed">    
             <div data-role="navbar">
                                 <ul>
-                                    <li><a class="ablanqueaCext1" href="#capturaExt1">Cancelar</a></li>
-                                    <li><a href="#" id="btnGuardarRegExt">Guardar</a></li>                        
+                                    <li><a class="ablanqueaCext1" href="#capturaExt1">Salir</a></li>
+                                    <li><a href="#myPopup" data-rel="popup">Guardar</a></li>                        
                                 </ul>
+
+                                    <div data-role="popup" id="myPopup" class="ui-content">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+     <a href="#" id="btnGuardarRegHidra">Guardar Registro</a>
+    </div>
+
+
                             </div><!-- /navbar -->
             </div>
 </div>
