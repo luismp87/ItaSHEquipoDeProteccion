@@ -68,8 +68,8 @@ $.ajax({
                         if(msg[i].valor1 == "encontro")
                             {                           
                            		navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia" ,"Aceptar");   
-                           	    //$('#myPopup').hide();
-                           	    $( "#myPopup" ).popup("close")
+                           	    //$("#myPopup").popup("open")
+                           	    $("#myPopup").popup("close");
                            	    $('#textPUESTO_TRABAJO').val("");
         						$('#textNUMERO_EMPLEADO').val("");
         						$('#textAREA').val("");

@@ -23,7 +23,7 @@ var fn = {
         $('#btnautentificar').tap(fn.autentificarSQL);   
         $('#BtnSalir').tap(fn.SalirYRestablecer);        
         $('#btnGuardarReg').tap(fn.GuardarReg); 
-        //$('#btnGuardar').tap(fn.Guardar);   
+        $('#btnGuardar').tap(fn.Guardar);   
         
         
         //PARA MOVIL
@@ -123,19 +123,19 @@ var fn = {
                 server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),window.localStorage.getItem("user"),window.localStorage.getItem("origen"));//Enviar a servidor                                
             }
 
-    }/*,
+    },
     Guardar: function(){
         if(($('#textPUESTO_TRABAJO').val() != "") && ($('#textNUMERO_EMPLEADO').val() != ""))
         {
-         $('#myPopup').show();
+         $("#myPopup").popup("open");
         }
         else
         {
             navigator.notification.alert("Ingrese Puesto y Número de empleado",null,"Advertencia","Aceptar");   
-             $('#myPopup').hide();
+         $("#myPopup").popup("close");
         }
 
-    }*/
+    }
 
 };
 //$(fn.init);
