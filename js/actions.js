@@ -99,7 +99,7 @@ var fn = {
     },
     GuardarReg: function()
     {
-    navigator.notification.alert("entro 0",null,"Error","Aceptar");   
+       
         fn.puesto_trabajo = $('#textPUESTO_TRABAJO').val();
         fn.numero_empleado = $('#textNUMERO_EMPLEADO').val();
         fn.area = $('#textAREA').val();
@@ -114,14 +114,13 @@ var fn = {
         fn.munequeras = $('#textMUNEQUERAS').val();
         fn.otros = $('#textOTROS').val();
         fn.observaciones = $('#textOBSERVACIONES').val();
-
-navigator.notification.alert("entro 1",null,"Error","Aceptar");   
+   
 
         if(navigator.connection.type != Connection.NONE)
             {
-                navigator.notification.alert("entro 2",null,"Error","Aceptar"); 
+                
                 server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen);//Enviar a servidor                
-                navigator.notification.alert("entro 3",null,"Error","Aceptar"); 
+                
             }
 
     }

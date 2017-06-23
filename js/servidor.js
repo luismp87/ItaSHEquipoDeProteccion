@@ -78,7 +78,7 @@ $.ajax({
                 },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-                    //navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
                     //navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
 
                     //almacen.guardarRegistroEXT(server.id_ext,server.presion,server.manometro,server.segurosello,server.manguera,server.soporte,server.pintura,server.valvula,server.cilindro,server.nemotecnia,server.senalamiento,server.gabinete,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario);
