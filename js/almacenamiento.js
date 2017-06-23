@@ -21,7 +21,7 @@ otros: null,
 observaciones: null,
 usuario: null,
 origen: null,
-fecha_alta: null;
+fecha_alta: null,
 	CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (usuario,pass,origen)");										
 									},
