@@ -37,7 +37,7 @@ server.otros = otros;
 server.observaciones = observaciones;
 var d = new Date();
 server.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
-var fechaderegistro = server.fecha_alta;
+var fecha_alta = server.fecha_alta;
 server.usuario = usuario;
 server.origen = origen;
 
@@ -60,7 +60,7 @@ $.ajax({
 					observaciones: observaciones,
 					usuario: usuario,
 					origen: origen,
-					fechaderegistro: fechaderegistro},
+					fecha_alta: fecha_alta},
                 dataType: "json",
 				success: function (msg){
 					$.mobile.loading("hide");
