@@ -40,11 +40,28 @@ server.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(
 var fecha_alta = server.fecha_alta;
 server.usuario = usuario;
 server.origen = origen;
-navigator.notification.alert(server.puesto_trabajo + " - " + server.numero_empleado + " - " + server.area + " - " + server.botas_seguridad + " - " + fecha_alta,null,"Variables","Aceptar");
+navigator.notification.alert(
+	puesto_trabajo + " - " + 
+	numero_empleado + " - " + 
+	area + " - " + 
+	botas_seguridad + " - " + 
+	casco+ " - " + 
+	guantes+ " - " + 
+	faja+ " - " + 
+	gafas+ " - " + 
+	respirador_3m_6200+ " - " + 
+	respirador_3m_8210+ " - " + 
+	tapones_auditivos+ " - " + 
+	munequeras+ " - " + 
+	otros+ " - " + 
+	observaciones+ " - " + 
+	usuario+ " - " + 
+	origen+ " - " + 
+	fecha_alta,null,"Variables","Aceptar");
 $.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg',				
-                data: { puesto_trabajo: puesto_trabajo, 
+                data: {puesto_trabajo: puesto_trabajo, 
 					numero_empleado: numero_empleado,
 					area: area,
 					botas_seguridad: botas_seguridad,
