@@ -132,6 +132,7 @@ var fn = {
         else
         {
             navigator.notification.alert("Ingrese Puesto y Número de empleado",null,"Advertencia","Aceptar");   
+             $('#myPopup').hide();
         }
 
     }
