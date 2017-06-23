@@ -125,7 +125,15 @@ var fn = {
 
     },
     Guardar: function(){
+        if(($('#textPUESTO_TRABAJO').val() != "") && ($('#textNUMERO_EMPLEADO').val() != ""))
+        {
          $('#myPopup').show();
+        }
+        else
+        {
+            navigator.notification.alert("Ingrese Puesto y Número de empleado",null,"Advertencia","Aceptar");   
+        }
+
     }
 
 };
