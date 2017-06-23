@@ -40,24 +40,7 @@ server.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(
 var fecha_alta = server.fecha_alta;
 server.usuario = usuario;
 server.origen = origen;
-navigator.notification.alert(
-	puesto_trabajo + " - " + 
-	numero_empleado + " - " + 
-	area + " - " + 
-	botas_seguridad + " - " + 
-	casco+ " - " + 
-	guantes+ " - " + 
-	faja+ " - " + 
-	gafas+ " - " + 
-	respirador_3m_6200+ " - " + 
-	respirador_3m_8210+ " - " + 
-	tapones_auditivos+ " - " + 
-	munequeras+ " - " + 
-	otros+ " - " + 
-	observaciones+ " - " + 
-	usuario+ " - " + 
-	origen+ " - " + 
-	fecha_alta,null,"Variables","Aceptar");
+
 $.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg',				
@@ -84,7 +67,22 @@ $.ajax({
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 == "encontro")
                             {                           
-                           navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia" ,"Aceptar");   
+                           		navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia" ,"Aceptar");   
+                           	    $('#myPopup').hide();
+                           	    $('#textPUESTO_TRABAJO').val("");
+        						$('#textNUMERO_EMPLEADO').val("");
+        						$('#textAREA').val("");
+        						$('#textBOTAS_SEGURIDAD').val("No").change();
+        						$('#textCASCO').val("No").change();
+        						$('#textGUANTES').val("No").change();
+        						$('#textFAJA').val("No").change();
+       		 					$('#textGAFAS').val("No").change();
+        						$('#textRESPIRADOR3M6200').val("No").change();
+        						$('#textRESPIRADOR3M8210').val("No").change();
+        						$('#textTAPONESAUDITIVOS').val("No").change();
+        						$('#textMUNEQUERAS').val("No").change();
+        						$('#textOTROS').val("No").change();
+        						$('#textOBSERVACIONES').val("");
                             }
                         else
                             {
@@ -95,7 +93,7 @@ $.ajax({
                 },
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
-                    navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
+                    //navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
                     //navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
 
                     //almacen.guardarRegistroEXT(server.id_ext,server.presion,server.manometro,server.segurosello,server.manguera,server.soporte,server.pintura,server.valvula,server.cilindro,server.nemotecnia,server.senalamiento,server.gabinete,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario);
