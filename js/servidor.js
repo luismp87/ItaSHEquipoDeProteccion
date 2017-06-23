@@ -40,7 +40,7 @@ server.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(
 var fecha_alta = server.fecha_alta;
 server.usuario = usuario;
 server.origen = origen;
-
+navigator.notification.alert(server.puesto_trabajo + " - " + server.numero_empleado + " - " + server.area + " - " + server.botas_seguridad + " - " + fecha_alta,null,"Variables","Aceptar");
 $.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg',				
