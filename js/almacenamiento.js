@@ -4,6 +4,24 @@ var almacen = {
 	pass: null,
 	origen: null,
 	myArray: null,
+
+	puesto_trabajo: null,
+numero_empleado: null,
+area: null,
+botas_seguridad: null,
+casco: null,
+guantes: null,
+faja: null,
+gafas: null,
+respirador_3m_6200: null,
+respirador_3m_8210: null,
+tapones_auditivos: null,
+munequeras: null,
+otros: null,
+observaciones: null,
+usuario: null,
+origen: null,
+fecha_alta: null;
 	CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (usuario,pass,origen)");										
 									},
@@ -14,6 +32,10 @@ var almacen = {
 	Correcto: function(){
 										//alert("Reserva guardada en espera de sincronización");
 										navigator.notification.alert("Ejecución satisfactoria", null, "Correcto", "Aceptar");
+									},
+    GuardadoCorrectoLocal: function(){
+										//alert("Reserva guardada en espera de sincronización");
+										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");
 									},
 		/*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerNumeroUsuarios: function(){  
@@ -105,7 +127,38 @@ var almacen = {
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 	
-	}
+	},
+	guardarRegistro: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta){
+		almacen.puesto_trabajo = puesto_trabajo;
+		almacen.numero_empleado = numero_empleado;
+		almacen.area = area;
+		almacen.botas_seguridad = botas_seguridad;
+		almacen.casco = casco;
+		almacen.guantes = guantes;
+		almacen.faja = faja;
+		almacen.gafas = gafas;
+		almacen.respirador_3m_6200 = respirador_3m_6200;
+		almacen.respirador_3m_8210 = respirador_3m_8210;
+		almacen.tapones_auditivos = tapones_auditivos;
+		almacen.munequeras = munequeras;
+		almacen.otros = otros;
+		almacen.observaciones = observaciones;
+		almacen.usuario = usuario;
+		almacen.origen = origen;
+
+		var d = new Date(); 		
+		almacen.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
+			
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteReg, almacen.error, null);
+			almacen.db.transaction(almacen.GuardarRegistro, almacen.error, almacen.GuardadoCorrectoLocal);
+			
+		},
+									GuardarRegistro: function(tx){
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta)");
+										tx.executeSql("INSERT INTO ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta) VALUES ('"+almacen.puesto_trabajo+"',"+almacen.numero_empleado+",'"+almacen.area+"','"+almacen.botas_seguridad+"','"+almacen.casco+"','"+almacen.guantes+"','"+almacen.faja+"','"+almacen.gafas+"','"+almacen.respirador_3m_6200+"','"+almacen.respirador_3m_8210+"','"+almacen.tapones_auditivos+"','"+almacen.munequeras+"','"+almacen.otros+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.origen+"','"+almacen.fecha_alta+"')");       
+										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
+									}
 
 
 }

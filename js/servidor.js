@@ -95,23 +95,25 @@ $.ajax({
 				error: function(jq, txt){
 					//alert(jq + txt.responseText);
                     //navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
-                    //navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
+                    navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
 
-                    //almacen.guardarRegistroEXT(server.id_ext,server.presion,server.manometro,server.segurosello,server.manguera,server.soporte,server.pintura,server.valvula,server.cilindro,server.nemotecnia,server.senalamiento,server.gabinete,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario);
-                                 //$("#txtitaextiV1").val("");
-                                //$("#textPRESION").val("OK").change();
-                                //$("#textMANOMETRO").val("OK").change();
-                                //$("#textSEGUROSELLO").val("OK").change();
-                                //$("#textMANGUERA").val("OK").change();
-                                //$("#textSOPORTE").val("OK").change();
-                                //$("#textPINTURA").val("OK").change();
-                                //$("#textVALVULA").val("OK").change();
-                                //$("#textCILINDRO").val("OK").change();
-                                //$("#textNEMOTECNIA").val("OK").change();
-                                //$("#textSENALAMIENTO").val("OK").change();
-                                //$("#textGABINETE").val("OK").change();
-                                //$("#textOBSERVACIONES").val("");
-                                //window.location.href = '#TiposDeCaptura';
+                    almacen.guardarRegistro(server.puesto_trabajo,server.numero_empleado,server.area,server.botas_seguridad,server.casco,server.guantes,server.faja,server.gafas,server.respirador_3m_6200,server.respirador_3m_8210,server.tapones_auditivos,server.munequeras,server.otros,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario,server.origen,server.fecha_alta);
+                               //$("#myPopup").popup("open")
+                           	    $("#myPopup").popup("close");
+                           	    $('#textPUESTO_TRABAJO').val("");
+        						$('#textNUMERO_EMPLEADO').val("");
+        						$('#textAREA').val("");
+        						$('#textBOTAS_SEGURIDAD').val("No").change();
+        						$('#textCASCO').val("No").change();
+        						$('#textGUANTES').val("No").change();
+        						$('#textFAJA').val("No").change();
+       		 					$('#textGAFAS').val("No").change();
+        						$('#textRESPIRADOR3M6200').val("No").change();
+        						$('#textRESPIRADOR3M8210').val("No").change();
+        						$('#textTAPONESAUDITIVOS').val("No").change();
+        						$('#textMUNEQUERAS').val("No").change();
+        						$('#textOTROS').val("No").change();
+        						$('#textOBSERVACIONES').val("");
 				}
 			}).done(server.sincronizado);
 

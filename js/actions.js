@@ -118,12 +118,39 @@ var fn = {
         fn.munequeras = $('#textMUNEQUERAS').val();
         fn.otros = $('#textOTROS').val();
         fn.observaciones = $('#textOBSERVACIONES').val();
+        fn.usuario = window.localStorage.getItem("user");
+        fn.origen = window.localStorage.getItem("origen");
+
+        var d = new Date();
+        fn.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        
    
 
         if(navigator.connection.type != Connection.NONE)
             {                
                 server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),window.localStorage.getItem("user"),window.localStorage.getItem("origen"));//Enviar a servidor                                
             }
+            else
+            {
+                                almacen.guardarRegistro(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta);
+                               //$("#myPopup").popup("open")
+                                $("#myPopup").popup("close");
+                                $('#textPUESTO_TRABAJO').val("");
+                                $('#textNUMERO_EMPLEADO').val("");
+                                $('#textAREA').val("");
+                                $('#textBOTAS_SEGURIDAD').val("No").change();
+                                $('#textCASCO').val("No").change();
+                                $('#textGUANTES').val("No").change();
+                                $('#textFAJA').val("No").change();
+                                $('#textGAFAS').val("No").change();
+                                $('#textRESPIRADOR3M6200').val("No").change();
+                                $('#textRESPIRADOR3M8210').val("No").change();
+                                $('#textTAPONESAUDITIVOS').val("No").change();
+                                $('#textMUNEQUERAS').val("No").change();
+                                $('#textOTROS').val("No").change();
+                                $('#textOBSERVACIONES').val("");
+            }
+
 
         }
         else
