@@ -150,9 +150,9 @@ navigator.notification.alert("entro 2",null,"Error al Ingresar","Aceptar");
 navigator.notification.alert("entro 3",null,"Error al Ingresar","Aceptar");
 		var d = new Date(); 		
 		almacen.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
-navigator.notification.alert("entro 4",null,"Error al Ingresar","Aceptar");			
+		
 			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
-			almacen.db.transaction(almacen.CreaSINOExisteReg, almacen.error, null);
+			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
 			almacen.db.transaction(almacen.GuardarRegistro, almacen.error, almacen.GuardadoCorrectoLocal);
 			
 		},
@@ -160,6 +160,7 @@ navigator.notification.alert("entro 4",null,"Error al Ingresar","Aceptar");
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta)");
 										tx.executeSql("INSERT INTO ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta) VALUES ('"+almacen.puesto_trabajo+"',"+almacen.numero_empleado+",'"+almacen.area+"','"+almacen.botas_seguridad+"','"+almacen.casco+"','"+almacen.guantes+"','"+almacen.faja+"','"+almacen.gafas+"','"+almacen.respirador_3m_6200+"','"+almacen.respirador_3m_8210+"','"+almacen.tapones_auditivos+"','"+almacen.munequeras+"','"+almacen.otros+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.origen+"','"+almacen.fecha_alta+"')");       
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
+										navigator.notification.alert("entro 4",null,"Error al Ingresar","Aceptar");	
 									}
 
 
