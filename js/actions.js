@@ -22,8 +22,7 @@ var fn = {
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL);   
         $('#BtnSalir').tap(fn.SalirYRestablecer);        
-        $('#btnGuardarReg').tap(fn.GuardarReg); 
-        $('#btnGuardar').tap(fn.Guardar);   
+        $('#btnGuardarReg').tap(fn.GuardarReg);         
         
         
         //PARA MOVIL
@@ -101,7 +100,10 @@ var fn = {
     },
     GuardarReg: function()
     {
-       
+       if(($('#textPUESTO_TRABAJO').val() != "") && ($('#textNUMERO_EMPLEADO').val() != ""))
+        {
+        
+
         fn.puesto_trabajo = $('#textPUESTO_TRABAJO').val();
         fn.numero_empleado = $('#textNUMERO_EMPLEADO').val();
         fn.area = $('#textAREA').val();
@@ -123,16 +125,11 @@ var fn = {
                 server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),window.localStorage.getItem("user"),window.localStorage.getItem("origen"));//Enviar a servidor                                
             }
 
-    },
-    Guardar: function(){
-        if(($('#textPUESTO_TRABAJO').val() != "") && ($('#textNUMERO_EMPLEADO').val() != ""))
-        {
-         $("#myPopup").popup("open");
         }
         else
         {
-            navigator.notification.alert("Ingrese Puesto y Número de empleado",null,"Advertencia","Aceptar");   
-         $("#myPopup").popup("close");
+        navigator.notification.alert("Ingrese Puesto y Número de empleado",null,"Advertencia","Aceptar");   
+        $("#myPopup").popup("close");
         }
 
     }
