@@ -6,22 +6,22 @@ var almacen = {
 	myArray: null,
 
 	puesto_trabajo: null,
-numero_empleado: null,
-area: null,
-botas_seguridad: null,
-casco: null,
-guantes: null,
-faja: null,
-gafas: null,
-respirador_3m_6200: null,
-respirador_3m_8210: null,
-tapones_auditivos: null,
-munequeras: null,
-otros: null,
-observaciones: null,
-usuario: null,
-origen: null,
-fecha_alta: null,
+	numero_empleado: null,
+	area: null,
+	botas_seguridad: null,
+	casco: null,
+	guantes: null,
+	faja: null,
+	gafas: null,
+	respirador_3m_6200: null,
+	respirador_3m_8210: null,
+	tapones_auditivos: null,
+	munequeras: null,
+	otros: null,
+	observaciones: null,
+	usuario: null,
+	origen: null,
+	fecha_alta: null,
 	CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (usuario,pass,origen)");										
 									},
@@ -129,6 +129,8 @@ fecha_alta: null,
 	
 	},
 	guardarRegistro: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta){
+navigator.notification.alert("entro 2",null,"Error al Ingresar","Aceptar");
+
 		almacen.puesto_trabajo = puesto_trabajo;
 		almacen.numero_empleado = numero_empleado;
 		almacen.area = area;
@@ -145,10 +147,10 @@ fecha_alta: null,
 		almacen.observaciones = observaciones;
 		almacen.usuario = usuario;
 		almacen.origen = origen;
-
+navigator.notification.alert("entro 3",null,"Error al Ingresar","Aceptar");
 		var d = new Date(); 		
 		almacen.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
-			
+navigator.notification.alert("entro 4",null,"Error al Ingresar","Aceptar");			
 			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteReg, almacen.error, null);
 			almacen.db.transaction(almacen.GuardarRegistro, almacen.error, almacen.GuardadoCorrectoLocal);
