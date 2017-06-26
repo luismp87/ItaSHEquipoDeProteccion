@@ -26,7 +26,7 @@ var fn = {
         
         
         //PARA MOVIL
-         document.addEventListener("online", almacen.leerinformacionregistrada, false);
+         document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
         ////////////
  
 	},

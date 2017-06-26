@@ -175,31 +175,8 @@ navigator.notification.alert("entro 3",null,"Error al Ingresar","Aceptar");
 									var encontro = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontro = 1;
-							/*$("#pPLANTA").text(t.rows.item(i).planta);
-							$("#pUBICACION").text(t.rows.item(i).ubicacion);
-                            $("#pCAPACIDAD").text(t.rows.item(i).capacidad);
-                            $("#pCLASE").text(t.rows.item(i).clase);
-                            $("#pAGENTE").text(t.rows.item(i).agente);
-                            $("#pMARCA").text(t.rows.item(i).marca);
-                            $("#pFRECARGA").text(t.rows.item(i).frecarga);
-                            $("#pFFABRICACION").text(t.rows.item(i).ffabricacion);
-                            $("#pFPROXSERVICIO").text(t.rows.item(i).fproxservicio);  */                 
-										
-
-												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
-																			   + "Días: " + t.rows.item(i).di + "\n"
-																			   + "Tipo de Habitación: " + t.rows.item(i).th,
-																			  function(btn){
-																				  if(btn == 1) navigator.vibrate(500);
-																				  if(btn == 2) navigator.notification.beep(1);
-																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
-												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
-												//campos = campos + "['"+ t.rows.item(i).id_ext +"','"+ t.rows.item(i).presion+"','"+t.rows.item(i).manometro+"','"+t.rows.item(i).segurosello+"','"+t.rows.item(i).manguera+"','"+t.rows.item(i).soporte+"','"+t.rows.item(i).pintura+"','"+t.rows.item(i).valvula+"','"+t.rows.item(i).cilindro+"','"+t.rows.item(i).nemotecnia+"','"+t.rows.item(i).senalamiento+"','"+t.rows.item(i).gabinete+"','"+t.rows.item(i).observaciones.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).usuario+"','"+t.rows.item(i).fechaderegistro + "']";
-												campos = campos + "['"+ t.rows.item(i).puesto_trabajo +"','"+ t.rows.item(i).numero_empleado+"','"+t.rows.item(i).area+"','"+t.rows.item(i).botas_seguridad+"','"+t.rows.item(i).casco+"','"+t.rows.item(i).guantes+"','"+t.rows.item(i).faja+"','"+t.rows.item(i).gafas+"','"+t.rows.item(i).respirador_3m_6200+"','"+t.rows.item(i).respirador_3m_8210+"','"+t.rows.item(i).tapones_auditivos+"','"+t.rows.item(i).munequeras+"','"+t.rows.item(i).otros+"','"+t.rows.item(i).observaciones.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).usuario + "','"+t.rows.item(i).origen +"','"+t.rows.item(i).fecha_alta+"']";
-												
-												//alert("id_ext: " + t.rows.item(i).id_ext);
-												//navigator.notification.alert("campos: " + campos, null, "mensaje 1", "Aceptar");
-											}
+							campos = campos + "['"+ t.rows.item(i).puesto_trabajo +"','"+ t.rows.item(i).numero_empleado+"','"+t.rows.item(i).area+"','"+t.rows.item(i).botas_seguridad+"','"+t.rows.item(i).casco+"','"+t.rows.item(i).guantes+"','"+t.rows.item(i).faja+"','"+t.rows.item(i).gafas+"','"+t.rows.item(i).respirador_3m_6200+"','"+t.rows.item(i).respirador_3m_8210+"','"+t.rows.item(i).tapones_auditivos+"','"+t.rows.item(i).munequeras+"','"+t.rows.item(i).otros+"','"+t.rows.item(i).observaciones.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).usuario + "','"+t.rows.item(i).origen +"','"+t.rows.item(i).fecha_alta+"']";												
+											                                  }
 											
 
 	if(encontro == 0)
