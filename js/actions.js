@@ -3,7 +3,6 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){           
-        //PARA MOVIL
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
@@ -72,6 +71,10 @@ var fn = {
         autentificarSQL: function(){
         var usu = $('#txtusuario').val();      
         var con = $('#txtcontrasena').val(); 
+
+        $('#txtusuario').val(""); 
+        $('#txtcontrasena').val("");
+
         if((usu != '') || (con != '')){   
             $.mobile.loading("show",{theme: 'b'});
             almacen.leerinformacionUsuario();
