@@ -35,9 +35,13 @@ text-align: center;
 	color: red !important;
 }
 
-#btnGuardarReg , #textORIGEN, #btnGuardar{
+#btnGuardarReg , #textORIGEN, #btnGuardar, .btnverde{
 	color: white !important;
   background-color: green !important;
+}
+
+.etiquetaverde{
+  color: green !important;
 }
 
 
