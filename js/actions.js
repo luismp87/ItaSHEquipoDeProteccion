@@ -26,7 +26,7 @@ var fn = {
         
         
         //PARA MOVIL
-        //document.addEventListener("online", fn.btnMigrarUsuarios(), false);
+         document.addEventListener("online", almacen.leerinformacionregistrada, false);
         ////////////
  
 	},

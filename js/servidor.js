@@ -130,7 +130,53 @@ $.ajax({
 			navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
 		}*/
 		//navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
-	}
+	},
+            sincronizarRegistrados: function(puesto_trabajo){
+
+            server.puesto_trabajo = puesto_trabajo;
+            //navigator.notification.alert("Datos: " + id_ext,null,"mensaje 2","Aceptar");              
+$.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg_en_movil',               
+                data: { puesto_trabajo: puesto_trabajo},
+                dataType: "json",
+                success: function (msg){
+                    //$.mobile.loading("hide");
+                    //$.each(msg,function(i,item){
+                        //if(msg[i].valor1 == "encontro")
+                            //{                           
+                           //navigator.notification.alert("La información se envio al servidor de forma correcta",null,"Advertencia","Aceptar");   
+                           almacen.eliminarregistros();
+                           // }
+                        //else
+                           /// {
+                           // navigator.notification.alert("Error al enviar la información al servidor",null,"Error 458","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                           /// }                        
+                   // });                   
+                },
+                error: function(jq, txt){
+                    //alert(jq + txt.responseText);
+                    //navigator.notification.alert(id_ext+"-" +presion+"-" +manometro+"-" +segurosello+"-" +manguera+"-" +soporte+"-" +pintura+"-" +valvula+"-" +cilindro+"-" +nemotecnia+"-" +senalamiento+"-" +gabinete+"-" +observaciones+"-" +usuario+"-" +fechaderegistro ,null,"Error ajax","Aceptar");
+                    //navigator.notification.alert("Error de comunicación para poder migrar la información almacenada en el dispositivo.",null,"Error - 456","Aceptar");
+                }
+            }).done(server.sincronizadoRegistrados);
+
+
+    },
+    sincronizadoRegistrados: function(msg){
+        /*if(msg == 1)
+        {
+            navigator.notification.alert("Los datos guardados se han sincronizado satisfactoriamente", null, "Sincronizado", "Aceptar");
+            almacen.gurdarHistorial(server.pr,server.di,server.th);//Guardar en Historial
+        }
+        else
+        {
+            navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
+        }*/
+        //almacen.eliminarregistrosExt();
+        //navigator.notification.alert("Los datos se guardaron remotamente satisfactoriamente ", null, "Advertencia", "Aceptar");
+    }
 
 
 };
