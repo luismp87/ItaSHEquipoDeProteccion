@@ -122,6 +122,8 @@ var almacen = {
 		window.localStorage.setItem("origen",origenf);
 		$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
 		//$("#txtcubo").val("");
+		$('#txtusuario').val(""); 
+        $('#txtcontrasena').val("");
  		window.location.href = '#Registro';
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
