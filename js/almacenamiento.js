@@ -24,6 +24,7 @@ var almacen = {
 	fecha_alta: null,
 	nombre_empleado: null,
 	nombre_reviso: null,
+	
 	CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (usuario,pass,origen)");										
 									},
