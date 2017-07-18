@@ -166,7 +166,7 @@ var almacen = {
 										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta,nombre_empleado,nombre_reviso)");
 										tx.executeSql("INSERT INTO ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta,nombre_empleado,nombre_reviso) VALUES ('"+almacen.puesto_trabajo+"',"+almacen.numero_empleado+",'"+almacen.area+"','"+almacen.botas_seguridad+"','"+almacen.casco+"','"+almacen.guantes+"','"+almacen.faja+"','"+almacen.gafas+"','"+almacen.respirador_3m_6200+"','"+almacen.respirador_3m_8210+"','"+almacen.tapones_auditivos+"','"+almacen.munequeras+"','"+almacen.otros+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.origen+"','"+almacen.fecha_alta+"','"+almacen.nombre_empleado.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+almacen.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' ')+"')");       
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
-										navigator.notification.alert("inserta en la base local",null,"mensaje 2","Aceptar"); 
+										
 										
 		},
 		leerinformacionregistrada_en_movil: function(tx){
@@ -183,7 +183,7 @@ var almacen = {
 											for(i = 0; i < t.rows.length; i++){
 							encontro = 1;
 							campos = campos + "['"+ t.rows.item(i).puesto_trabajo +"','"+ t.rows.item(i).numero_empleado+"','"+t.rows.item(i).area+"','"+t.rows.item(i).botas_seguridad+"','"+t.rows.item(i).casco+"','"+t.rows.item(i).guantes+"','"+t.rows.item(i).faja+"','"+t.rows.item(i).gafas+"','"+t.rows.item(i).respirador_3m_6200+"','"+t.rows.item(i).respirador_3m_8210+"','"+t.rows.item(i).tapones_auditivos+"','"+t.rows.item(i).munequeras+"','"+t.rows.item(i).otros+"','"+t.rows.item(i).observaciones.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).usuario + "','"+t.rows.item(i).origen +"','"+t.rows.item(i).nombre_empleado.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).fecha_alta+"']";												
-							navigator.notification.alert("selecciono lo que se va a mandar",null,"mensaje 2","Aceptar"); 				                                  }
+							//navigator.notification.alert("selecciono lo que se va a mandar",null,"mensaje 2","Aceptar"); 				                                  }
 											
 
 	if(encontro == 0)
