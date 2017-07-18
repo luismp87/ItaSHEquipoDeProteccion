@@ -144,7 +144,7 @@ $.ajax({
             sincronizarRegistrados: function(puesto_trabajo){
 
             server.puesto_trabajo = puesto_trabajo;
-            navigator.notification.alert("enviando al server",null,"mensaje 2","Aceptar");              
+            navigator.notification.alert("enviando ser: " + puesto_trabajo,null,"mensaje 2","Aceptar");              
 $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg_en_movil',               
