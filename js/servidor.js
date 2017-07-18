@@ -16,10 +16,12 @@ var server = {
         fecha_alta: null,     
         usuario: null,
         origen: null,
+        nombre_empleado: null,
+        nombre_reviso: null,
            
                
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
-sincronizar: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen){
+sincronizar: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,nombre_empleado,nombre_reviso){
 
 server.puesto_trabajo = puesto_trabajo; 
 server.numero_empleado = numero_empleado; 
@@ -40,6 +42,8 @@ server.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(
 var fecha_alta = server.fecha_alta;
 server.usuario = usuario;
 server.origen = origen;
+server.nombre_empleado = nombre_empleado;
+server.nombre_reviso = nombre_reviso;
 
 $.ajax({
                 method: 'POST',
@@ -60,7 +64,9 @@ $.ajax({
 					observaciones: observaciones,
 					usuario: usuario,
 					origen: origen,
-					fecha_alta: fecha_alta},
+					fecha_alta: fecha_alta,
+                    nombre_empleado: nombre_empleado,
+                    nombre_reviso: nombre_reviso},
                 dataType: "json",
 				success: function (msg){
 					$.mobile.loading("hide");
@@ -84,6 +90,8 @@ $.ajax({
         						$('#textMUNEQUERAS').val("No").change();
         						$('#textOTROS').val("No").change();
         						$('#textOBSERVACIONES').val("");
+                                $('#textNOMBRE_EMPLEADO').val("");
+                                $('#textREVISO').val("");
                             }
                         else
                             {
@@ -97,7 +105,7 @@ $.ajax({
                     //navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
                     navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
 
-                    almacen.guardarRegistro(server.puesto_trabajo,server.numero_empleado,server.area,server.botas_seguridad,server.casco,server.guantes,server.faja,server.gafas,server.respirador_3m_6200,server.respirador_3m_8210,server.tapones_auditivos,server.munequeras,server.otros,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario,server.origen,server.fecha_alta);
+                    almacen.guardarRegistro(server.puesto_trabajo,server.numero_empleado,server.area,server.botas_seguridad,server.casco,server.guantes,server.faja,server.gafas,server.respirador_3m_6200,server.respirador_3m_8210,server.tapones_auditivos,server.munequeras,server.otros,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario,server.origen,server.fecha_alta,server.nombre_empleado,server.nombre_reviso);
                                //$("#myPopup").popup("open")
                            	    $("#myPopup").popup("close");
                            	    $('#textPUESTO_TRABAJO').val("");
@@ -114,6 +122,8 @@ $.ajax({
         						$('#textMUNEQUERAS').val("No").change();
         						$('#textOTROS').val("No").change();
         						$('#textOBSERVACIONES').val("");
+                                $('#textNOMBRE_EMPLEADO').val("");
+                                $('#textREVISO').val("");
 				}
 			}).done(server.sincronizado);
 

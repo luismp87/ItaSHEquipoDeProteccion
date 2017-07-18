@@ -22,6 +22,8 @@ var almacen = {
 	usuario: null,
 	origen: null,
 	fecha_alta: null,
+	nombre_empleado: null,
+	nombre_reviso: null,
 	CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (usuario,pass,origen)");										
 									},
@@ -130,7 +132,7 @@ var almacen = {
 										});
 	
 	},
-	guardarRegistro: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta){
+	guardarRegistro: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta,nombre_empleado,nombre_reviso){
 
 		almacen.puesto_trabajo = puesto_trabajo;
 		almacen.numero_empleado = numero_empleado;
@@ -148,6 +150,8 @@ var almacen = {
 		almacen.observaciones = observaciones;
 		almacen.usuario = usuario;
 		almacen.origen = origen;
+		almacen.nombre_empleado = nombre_empleado;
+		almacen.nombre_reviso = nombre_reviso;
 
 		var d = new Date(); 		
 		almacen.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
@@ -158,8 +162,8 @@ var almacen = {
 			
 		},
 									GuardarRegistro: function(tx){
-										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta)");
-										tx.executeSql("INSERT INTO ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta) VALUES ('"+almacen.puesto_trabajo+"',"+almacen.numero_empleado+",'"+almacen.area+"','"+almacen.botas_seguridad+"','"+almacen.casco+"','"+almacen.guantes+"','"+almacen.faja+"','"+almacen.gafas+"','"+almacen.respirador_3m_6200+"','"+almacen.respirador_3m_8210+"','"+almacen.tapones_auditivos+"','"+almacen.munequeras+"','"+almacen.otros+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.origen+"','"+almacen.fecha_alta+"')");       
+										tx.executeSql("CREATE TABLE IF NOT EXISTS ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta,nombre_empleado,nombre_reviso)");
+										tx.executeSql("INSERT INTO ita_sh_reg_equipo_proteccion (puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta,nombre_empleado,nombre_reviso) VALUES ('"+almacen.puesto_trabajo+"',"+almacen.numero_empleado+",'"+almacen.area+"','"+almacen.botas_seguridad+"','"+almacen.casco+"','"+almacen.guantes+"','"+almacen.faja+"','"+almacen.gafas+"','"+almacen.respirador_3m_6200+"','"+almacen.respirador_3m_8210+"','"+almacen.tapones_auditivos+"','"+almacen.munequeras+"','"+almacen.otros+"','"+almacen.observaciones+"','"+almacen.usuario+"','"+almacen.origen+"','"+almacen.fecha_alta+"','"+almacen.nombre_empleado.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+almacen.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' ')+"')");       
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
 										
 		},
@@ -171,12 +175,12 @@ var almacen = {
 	},
 									leerinforegistrada_en_movil: function(tx){
 										
-									tx.executeSql("SELECT puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta FROM ita_sh_reg_equipo_proteccion", [], function(tx2, t){
+									tx.executeSql("SELECT puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,fecha_alta,nombre_empleado,nombre_reviso FROM ita_sh_reg_equipo_proteccion", [], function(tx2, t){
 									var campos = "";
 									var encontro = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontro = 1;
-							campos = campos + "['"+ t.rows.item(i).puesto_trabajo +"','"+ t.rows.item(i).numero_empleado+"','"+t.rows.item(i).area+"','"+t.rows.item(i).botas_seguridad+"','"+t.rows.item(i).casco+"','"+t.rows.item(i).guantes+"','"+t.rows.item(i).faja+"','"+t.rows.item(i).gafas+"','"+t.rows.item(i).respirador_3m_6200+"','"+t.rows.item(i).respirador_3m_8210+"','"+t.rows.item(i).tapones_auditivos+"','"+t.rows.item(i).munequeras+"','"+t.rows.item(i).otros+"','"+t.rows.item(i).observaciones.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).usuario + "','"+t.rows.item(i).origen +"','"+t.rows.item(i).fecha_alta+"']";												
+							campos = campos + "['"+ t.rows.item(i).puesto_trabajo +"','"+ t.rows.item(i).numero_empleado+"','"+t.rows.item(i).area+"','"+t.rows.item(i).botas_seguridad+"','"+t.rows.item(i).casco+"','"+t.rows.item(i).guantes+"','"+t.rows.item(i).faja+"','"+t.rows.item(i).gafas+"','"+t.rows.item(i).respirador_3m_6200+"','"+t.rows.item(i).respirador_3m_8210+"','"+t.rows.item(i).tapones_auditivos+"','"+t.rows.item(i).munequeras+"','"+t.rows.item(i).otros+"','"+t.rows.item(i).observaciones.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).usuario + "','"+t.rows.item(i).origen +"','"+t.rows.item(i).fecha_alta+"','"+t.rows.item(i).nombre_empleado.replace(/[^a-zA-Z 0-9.]+/g,' ')+"','"+t.rows.item(i).nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' ')+"']";												
 											                                  }
 											
 

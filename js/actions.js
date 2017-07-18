@@ -120,6 +120,9 @@ var fn = {
         fn.observaciones = $('#textOBSERVACIONES').val();
         fn.usuario = window.localStorage.getItem("user");
         fn.origen = window.localStorage.getItem("origen");
+        fn.nombre_empleado = $('#textNOMBRE_EMPLEADO').val();
+        fn.nombre_reviso= $('#textREVISO').val();
+
 
         var d = new Date();
         fn.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
@@ -128,11 +131,11 @@ var fn = {
 
         if(navigator.connection.type != Connection.NONE)
             {                
-                server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),window.localStorage.getItem("user"),window.localStorage.getItem("origen"));//Enviar a servidor                                
+                server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),window.localStorage.getItem("user"),window.localStorage.getItem("origen"),fn.nombre_empleado,fn.nombre_reviso);//Enviar a servidor                                
             }
             else
             {
-                                almacen.guardarRegistro(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta);
+                                almacen.guardarRegistro(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta,fn.nombre_empleado,fn.nombre_reviso);
                                //$("#myPopup").popup("open")
                                 
                                 $('#textPUESTO_TRABAJO').val("");
@@ -148,7 +151,9 @@ var fn = {
                                 $('#textTAPONESAUDITIVOS').val("No").change();
                                 $('#textMUNEQUERAS').val("No").change();
                                 $('#textOTROS').val("No").change();
+                                $('#textNOMBRE_EMPLEADO').val("");
                                 $('#textOBSERVACIONES').val("");
+                                $('#textREVISO').val("");
                                 $("#myPopup").popup("close");
             }
 
