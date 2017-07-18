@@ -22,8 +22,7 @@ var server = {
                
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizar: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,nombre_empleado,nombre_reviso){
-
- navigator.notification.alert("entro a funcion sincronizar",null,"Advertencia","Aceptar");   
+  
 server.puesto_trabajo = puesto_trabajo; 
 server.numero_empleado = numero_empleado; 
 server.area = area; 
@@ -45,7 +44,7 @@ server.usuario = usuario;
 server.origen = origen;
 server.nombre_empleado = nombre_empleado;
 server.nombre_reviso = nombre_reviso;
- navigator.notification.alert("paso datos bien",null,"Advertencia","Aceptar");   
+ 
 $.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg',				
