@@ -105,7 +105,7 @@ $.ajax({
                     //navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
                     navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
 
-                    almacen.guardarRegistro(server.puesto_trabajo,server.numero_empleado,server.area,server.botas_seguridad,server.casco,server.guantes,server.faja,server.gafas,server.respirador_3m_6200,server.respirador_3m_8210,server.tapones_auditivos,server.munequeras,server.otros,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario,server.origen,server.fecha_alta,server.nombre_empleado,server.nombre_reviso);
+                    almacen.guardarRegistro(server.puesto_trabajo,server.numero_empleado,server.area,server.botas_seguridad,server.casco,server.guantes,server.faja,server.gafas,server.respirador_3m_6200,server.respirador_3m_8210,server.tapones_auditivos,server.munequeras,server.otros,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario,server.origen,server.fecha_alta,server.nombre_empleado.replace(/[^a-zA-Z 0-9.]+/g,' '),server.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));
                                //$("#myPopup").popup("open")
                            	    $("#myPopup").popup("close");
                            	    $('#textPUESTO_TRABAJO').val("");
