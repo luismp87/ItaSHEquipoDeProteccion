@@ -134,14 +134,15 @@ $.ajax({
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                    	navigator.notification.alert("encontro:", null, "Advertencia", "Aceptar");
-                        $('textREVISO').val(msg[i].IP_NOMBRE_EMPLEADO);
+                    	navigator.notification.alert("encontro:" + msg[i].IP_NOMBRE_EMPLEADO, null, "Advertencia", "Aceptar");
+                        $('#textREVISO').val(""+ msg[i].IP_NOMBRE_EMPLEADO);
                     }); 
         window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
 		$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
 		$('#txtusuario').val(""); 
         $('#txtcontrasena').val("");
+        $('#txtnumero_Empleado_realiza').val("");
  		window.location.href = '#Registro';         
         },
         error: function(jq, txt){
