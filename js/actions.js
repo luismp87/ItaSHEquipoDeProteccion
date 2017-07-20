@@ -2,7 +2,8 @@ var fn = {
 	ready: function(){
 		document.addEventListener("deviceready",fn.init,false);
 	},
-	init: function(){           
+	init: function(){ 
+    $('#textREVISO').val(""+ window.localStorage.getItem("yamigrousuarios"));          
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
@@ -96,6 +97,7 @@ var fn = {
     SalirYRestablecer: function()
     {
          window.localStorage.setItem("user",'');
+         window.localStorage.setItem("yamigrousuarios",'');
          window.location.href = '#login';   
     },
     GuardarReg: function()
