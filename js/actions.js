@@ -3,7 +3,7 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){ 
-    $('#textREVISO').val(""+ window.localStorage.getItem("yamigrousuarios"));          
+    $('#textREVISO').val(""+ window.localStorage.getItem("revisa"));          
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
@@ -97,7 +97,7 @@ var fn = {
     SalirYRestablecer: function()
     {
          window.localStorage.setItem("user",'');
-         window.localStorage.setItem("yamigrousuarios",'');
+         window.localStorage.setItem("revisa",'');
          window.location.href = '#login';   
     },
     GuardarReg: function()
