@@ -153,7 +153,7 @@ var fn = {
                                 $('#textOTROS').val("No").change();
                                 $('#textNOMBRE_EMPLEADO').val("");
                                 $('#textOBSERVACIONES').val("");
-                                $('#textREVISO').val("");
+                                
                                 $("#myPopup").popup("close");
             }
 

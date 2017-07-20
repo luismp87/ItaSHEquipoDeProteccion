@@ -91,7 +91,7 @@ $.ajax({
         						$('#textOTROS').val("No").change();
         						$('#textOBSERVACIONES').val("");
                                 $('#textNOMBRE_EMPLEADO').val("");
-                                $('#textREVISO').val("");
+                               
                             }
                         else
                             {
@@ -123,7 +123,7 @@ $.ajax({
         						$('#textOTROS').val("No").change();
         						$('#textOBSERVACIONES').val("");
                                 $('#textNOMBRE_EMPLEADO').val("");
-                                $('#textREVISO').val("");
+                                
 				}
 			}).done(server.sincronizado);
 
