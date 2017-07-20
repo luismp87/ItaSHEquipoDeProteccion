@@ -134,16 +134,25 @@ $.ajax({
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                    	navigator.notification.alert("encontro:" + msg[i].IP_NOMBRE_EMPLEADO, null, "Advertencia", "Aceptar");
-                        $('#textREVISO').val(""+ msg[i].IP_NOMBRE_EMPLEADO);
+                    	if(msg[i].Respuesta == "encontro")
+                            { 
+                            	navigator.notification.alert("encontro:" + msg[i].Nombre, null, "Advertencia", "Aceptar");
+                        		$('#textREVISO').val(""+ msg[i].Nombre);
+                        		window.localStorage.setItem("user",usuariof);
+								window.localStorage.setItem("origen",origenf);
+								$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+								$('#txtusuario').val(""); 
+        						$('#txtcontrasena').val("");
+        						$('#txtnumero_Empleado_realiza').val("");
+ 								window.location.href = '#Registro';        
+                            }
+                            else
+                            {
+								navigator.notification.alert("Verifique el número de empleado.",null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
+                            }
+                    	
                     }); 
-        window.localStorage.setItem("user",usuariof);
-		window.localStorage.setItem("origen",origenf);
-		$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
-		$('#txtusuario').val(""); 
-        $('#txtcontrasena').val("");
-        $('#txtnumero_Empleado_realiza').val("");
- 		window.location.href = '#Registro';         
+         
         },
         error: function(jq, txt){
                     //alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" +jq + txt.responseText);///*PARAWEB
