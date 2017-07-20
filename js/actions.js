@@ -34,7 +34,7 @@ var fn = {
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {      
         navigator.notification.alert("yamigrousuarios:"+window.localStorage.getItem("yamigrousuarios"),null,"Listo","Aceptar");    
-        var myArray = new Array(30); 
+        var myArray = new Array(60); 
         var registros = $('#NumUsuarios').val();  
         if(registros == 0)
             {
@@ -50,6 +50,7 @@ var fn = {
                     $.each(msg,function(i,item){
                         myArray[i] = msg[i].usuario + "','" + msg[i].pass + "','" + msg[i].origen;
                     }); 
+                    navigator.notification.alert("antes array",null,"Listo","Aceptar");
                     almacen.guardarUsuario(myArray);
                     navigator.notification.alert("guardarUsuario",null,"Listo","Aceptar");
                     almacen.leerNumeroUsuarios();  
