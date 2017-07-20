@@ -30,6 +30,7 @@ var fn = {
  
 	},
         btnMigrarUsuarios: function(){ 
+             navigator.notification.alert("fincion btnMigrarUsuarios",null,"Listo","Aceptar"); 
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {         
         var myArray = new Array(30); 
