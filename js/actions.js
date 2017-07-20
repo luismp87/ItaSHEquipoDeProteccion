@@ -51,7 +51,9 @@ var fn = {
                         myArray[i] = msg[i].usuario + "','" + msg[i].pass + "','" + msg[i].origen;
                     }); 
                     almacen.guardarUsuario(myArray);
+                    navigator.notification.alert("guardarUsuario",null,"Listo","Aceptar");
                     almacen.leerNumeroUsuarios();  
+                    navigator.notification.alert("leerNumeroUsuarios",null,"Listo","Aceptar");
                     window.localStorage.setItem("yamigrousuarios","SI");
                     navigator.notification.alert("Migración Correcta de Usuarios",null,"Listo","Aceptar");               
         },
