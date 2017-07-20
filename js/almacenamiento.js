@@ -124,30 +124,32 @@ var almacen = {
 ///Area autentificacion base de datos
 /////
 almacen.numero_Empleado_realiza =  $('#txtnumero_Empleado_realiza').val();
-navigator.notification.alert("almacen.numero_Empleado_realiza:" + almacen.numero_Empleado_realiza, null, "Advertencia", "Aceptar");
-//ss$.ajax({
-//ss                method: 'POST',
-//ss                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/validaNumeroEmpleado',              
-//ss                data: {numeroEmpleado: numero_Empleado_realiza},
-//ss                dataType: "json",
-//ss                success: function (msg){
-//ss                    $.mobile.loading("hide");
-//ss                    $.each(msg,function(i,item){
-//ss                        $('textREVISO').val(msg[i].IP_NOMBRE_EMPLEADO);
-//ss                    }); 
+navigator.notification.alert("almacen.numero_Empleado_realiza 1:" + almacen.numero_Empleado_realiza, null, "Advertencia", "Aceptar");
+navigator.notification.alert("almacen.numero_Empleado_realiza 2:" + numero_Empleado_realiza, null, "Advertencia", "Aceptar");
+
+$.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/validaNumeroEmpleado',              
+                data: {numeroEmpleado: almacen.numero_Empleado_realiza},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                    	navigator.notification.alert("encontro:", null, "Advertencia", "Aceptar");
+                        $('textREVISO').val(msg[i].IP_NOMBRE_EMPLEADO);
+                    }); 
         window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
 		$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
-		//$("#txtcubo").val("");
 		$('#txtusuario').val(""); 
         $('#txtcontrasena').val("");
  		window.location.href = '#Registro';         
- //ss       },
- //ss       error: function(jq, txt){
+        },
+        error: function(jq, txt){
                     //alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" +jq + txt.responseText);///*PARAWEB
- //ss                   navigator.notification.alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" + jq + txt.responseText,null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
- //ss               }
- //ss           });
+                    navigator.notification.alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" + jq + txt.responseText,null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
+                }
+            });
 /////
 
 
