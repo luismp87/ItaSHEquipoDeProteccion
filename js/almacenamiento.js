@@ -135,7 +135,7 @@ $.ajax({
                     	if(msg[i].Respuesta == "encontro")
                             {                             	
                         		$('#textREVISO').val(""+ msg[i].Nombre);
-                        		window.localStorage.setItem("yamigrousuarios",""+ msg[i].Nombre);
+                        		window.localStorage.setItem("revisa",""+ msg[i].Nombre);
                         		window.localStorage.setItem("user",usuariof);
 								window.localStorage.setItem("origen",origenf);
 								$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
