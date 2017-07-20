@@ -196,7 +196,7 @@ var almacen = {
 		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
-										});
+								}		});
 	
 	},
 	eliminarregistros: function(tx){
