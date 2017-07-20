@@ -31,8 +31,7 @@ var fn = {
 	},
         btnMigrarUsuarios: function(){ 
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
-        {      
-        navigator.notification.alert("yamigrousuarios:"+window.localStorage.getItem("yamigrousuarios"),null,"Listo","Aceptar");    
+        {          
         var myArray = new Array(60); 
         var registros = $('#NumUsuarios').val();  
         if(registros == 0)

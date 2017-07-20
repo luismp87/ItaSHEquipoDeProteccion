@@ -124,8 +124,6 @@ var almacen = {
 ///Area autentificacion base de datos
 /////
 almacen.numero_Empleado_realiza =  $('#txtnumero_Empleado_realiza').val();
-navigator.notification.alert("almacen.numero_Empleado_realiza 1:" + almacen.numero_Empleado_realiza, null, "Advertencia", "Aceptar");
-
 $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/validaNumeroEmpleado',              
@@ -135,8 +133,7 @@ $.ajax({
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
                     	if(msg[i].Respuesta == "encontro")
-                            { 
-                            	navigator.notification.alert("encontro:" + msg[i].Nombre, null, "Advertencia", "Aceptar");
+                            {                             	
                         		$('#textREVISO').val(""+ msg[i].Nombre);
                         		window.localStorage.setItem("user",usuariof);
 								window.localStorage.setItem("origen",origenf);
@@ -148,7 +145,7 @@ $.ajax({
                             }
                             else
                             {
-								navigator.notification.alert("Verifique el número de empleado.",null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
+								navigator.notification.alert("Verifique el número de empleado.",null,"Error","Aceptar");///*PARAMOVIL
                             }
                     	
                     }); 
