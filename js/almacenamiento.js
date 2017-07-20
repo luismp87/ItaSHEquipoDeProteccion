@@ -125,7 +125,6 @@ var almacen = {
 /////
 almacen.numero_Empleado_realiza =  $('#txtnumero_Empleado_realiza').val();
 navigator.notification.alert("almacen.numero_Empleado_realiza 1:" + almacen.numero_Empleado_realiza, null, "Advertencia", "Aceptar");
-navigator.notification.alert("almacen.numero_Empleado_realiza 2:" + numero_Empleado_realiza, null, "Advertencia", "Aceptar");
 
 $.ajax({
                 method: 'POST',
