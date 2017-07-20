@@ -30,7 +30,6 @@ var fn = {
  
 	},
         btnMigrarUsuarios: function(){ 
-             navigator.notification.alert("fincion btnMigrarUsuarios",null,"Listo","Aceptar"); 
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {      
         navigator.notification.alert("yamigrousuarios:"+window.localStorage.getItem("yamigrousuarios"),null,"Listo","Aceptar");    
@@ -38,7 +37,6 @@ var fn = {
         var registros = $('#NumUsuarios').val();  
         if(registros == 0)
             {
-                navigator.notification.alert("registros:"+registros,null,"Listo","Aceptar"); 
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
@@ -50,11 +48,8 @@ var fn = {
                     $.each(msg,function(i,item){
                         myArray[i] = msg[i].usuario + "','" + msg[i].pass + "','" + msg[i].origen;
                     }); 
-                    navigator.notification.alert("antes array",null,"Listo","Aceptar");
                     almacen.guardarUsuario(myArray);
-                    navigator.notification.alert("guardarUsuario",null,"Listo","Aceptar");
                     almacen.leerNumeroUsuarios();  
-                    navigator.notification.alert("leerNumeroUsuarios",null,"Listo","Aceptar");
                     window.localStorage.setItem("yamigrousuarios","SI");
                     navigator.notification.alert("Migración Correcta de Usuarios",null,"Listo","Aceptar");               
         },

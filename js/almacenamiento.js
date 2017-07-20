@@ -121,13 +121,36 @@ var almacen = {
 	}
 	else if(encontroUsuario >= 1)
 	{
-		window.localStorage.setItem("user",usuariof);
+///Area autentificacion base de datos
+/////
+almacen.numero_Empleado_realiza =  $('#txtnumero_Empleado_realiza').val();
+$.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/validaNumeroEmpleado',              
+                data: {numeroEmpleado: numero_Empleado_realiza},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        $('textREVISO').val(msg[i].IP_NOMBRE_EMPLEADO);
+                    }); 
+        window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
 		$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
 		//$("#txtcubo").val("");
 		$('#txtusuario').val(""); 
         $('#txtcontrasena').val("");
- 		window.location.href = '#Registro';
+ 		window.location.href = '#Registro';         
+        },
+        error: function(jq, txt){
+                    //alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" +jq + txt.responseText);///*PARAWEB
+                    navigator.notification.alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" + jq + txt.responseText,null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
+                }
+            });
+/////
+
+
+
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
