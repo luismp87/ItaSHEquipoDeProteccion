@@ -32,11 +32,13 @@ var fn = {
         btnMigrarUsuarios: function(){ 
              navigator.notification.alert("fincion btnMigrarUsuarios",null,"Listo","Aceptar"); 
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
-        {         
+        {      
+        navigator.notification.alert("yamigrousuarios:"+window.localStorage.getItem("yamigrousuarios"),null,"Listo","Aceptar");    
         var myArray = new Array(30); 
         var registros = $('#NumUsuarios').val();  
         if(registros == 0)
             {
+                navigator.notification.alert("registros:"+registros,null,"Listo","Aceptar"); 
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
