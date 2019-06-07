@@ -268,8 +268,8 @@ $.ajax({
                             {
 								navigator.notification.alert("Verifique el número de empleado.",null,"Advertencia","Aceptar");///*PARAMOVIL
                             }                                                
-                    }); 
-                    $('select#Select').val('0');
+                    });                     
+                    $('select#Select').val("0").change();
          			navigator.notification.alert("Busqueda finalizada.",null,"Aviso","Aceptar");///*PARAMOVIL
         },
         error: function(jq, txt){
