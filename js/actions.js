@@ -22,9 +22,12 @@ var fn = {
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL);   
         $('#BtnSalir').tap(fn.SalirYRestablecer);        
-        $('#btnGuardarReg').tap(fn.GuardarReg);         
-        
-        
+        $('#btnGuardarReg').tap(fn.GuardarReg);
+        $('#btn_ir_asignacion_epp').tap(fn.ir_asignacion_epp);  
+        $('#btn_ir_boletas_epp').tap(fn.ir_boletas_epp);  
+
+               
+                
         //PARA MOVIL
          document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
         ////////////
@@ -167,7 +170,19 @@ var fn = {
         $("#myPopup").popup("close");
         }
 
+    },    
+    ir_asignacion_epp: function()
+    {
+        window.location.href = '#Registro';     
     }
+    ,    
+    ir_boletas_epp: function()
+    {
+        window.location.href = '#RegistroBoleta';     
+    }
+
+    
+
 
 };
 //$(fn.init);

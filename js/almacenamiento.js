@@ -135,14 +135,18 @@ $.ajax({
                     	if(msg[i].Respuesta == "encontro")
                             {                             	
                         		$('#textREVISO').val(""+ msg[i].Nombre);
+                        		$('#textREVISO_3').val(""+ msg[i].Nombre);
                         		window.localStorage.setItem("revisa",""+ msg[i].Nombre);
                         		window.localStorage.setItem("user",usuariof);
 								window.localStorage.setItem("origen",origenf);
 								$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+								$("#textORIGEN_2").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+								$("#textORIGEN_3").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
 								$('#txtusuario').val(""); 
         						$('#txtcontrasena').val("");
         						$('#txtnumero_Empleado_realiza').val("");
- 								window.location.href = '#Registro';        
+ 								//window.location.href = '#Registro';
+ 								window.location.href = '#Menu'; 								       
                             }
                             else
                             {
