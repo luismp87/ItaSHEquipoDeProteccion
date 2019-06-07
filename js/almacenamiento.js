@@ -256,6 +256,7 @@ $.ajax({
                 success: function (msg){
                     $.mobile.loading("hide");
                     $('select#Select option').remove();
+                    $("#Select").append('<option value=0>Seleccione el empleado</option>');
                     $.each(msg,function(i,item){					
                     	if(msg[i].Respuesta == "encontro")
                             {     
@@ -265,12 +266,12 @@ $.ajax({
                             }
                             else
                             {
-								navigator.notification.alert("Verifique el número de empleado.",null,"Error","Aceptar");///*PARAMOVIL
+								navigator.notification.alert("Verifique el número de empleado.",null,"Advertencia","Aceptar");///*PARAMOVIL
                             }
                             
                     	
                     }); 
-                    $('select#Select').val('Seleccione el empleado');
+                    $('select#Select').val('0');
          
         },
         error: function(jq, txt){
