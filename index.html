@@ -74,7 +74,7 @@
 
 <!--PANTALLA CAPTURA-->
 <div data-role="page" id="Registro">
-<div data-role="header"><h2>Registro de entrega de equipo de protección</h2></div> 
+<div data-role="header"><h2>Registro Entrega de equipo de protección</h2></div> 
 <div data-role="main" class="ui-content">
                     <ul data-role="listview"> 
                      <li data-role="list-divider" id="textORIGEN"></li>
@@ -203,16 +203,45 @@
 </div>
 <!--PANTALLA CAPTURA-->
 <div data-role="page" id="RegistroBoleta">
-<div data-role="header"><h2>Registro de entrega de equipo de protección</h2></div> 
+<div data-role="header"><h2>Registro Boleta</h2></div> 
 <div data-role="main" class="ui-content">
                     <ul data-role="listview"> 
+                     
                      <li data-role="list-divider" id="textORIGEN_3"></li>
+
+                    <li><b class="etiquetaverde">Número de empleado:</b>
+                        <input type="number" class="entrada_texto" id="textNUMERO_EMPLEADO_3" placeholder="Número de empleado">
+                    </li>
+
+                    <li>
+                        <select id="Select"></select>                        
+                    </li>
+
+                    <li>
+                        <input type="submit" class="btnverde" value="Buscar empleado" id="btn_buscar_por_n_empleado">
+                    </li>
 
                      <li><b class="etiquetaverde">Realiza:</b>
                         <input type="text" class="entrada_texto" id="textREVISO_3" placeholder="Reviso" readonly>
                     </li>
+                    
                      </ul>
-                 </div>
+</div>
+<div data-role="footer" data-position="fixed">    
+            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#" id="BtnSalir_3">Salir</a></li>
+                                    <li><a href="#myPopup_3" data-rel="popup" data-position-to="window" id="btnGuardar_3">Guardar</a></li>                        
+                                </ul>
+
+                                    <div data-role="popup" id="myPopup_3" class="ui-content">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+     <a href="#" class="parpadea" id="btnGuardarReg_3">Guardar Registro</a>
+    </div>
+
+
+                            </div><!-- /navbar -->
+</div>
              </div>
 
 

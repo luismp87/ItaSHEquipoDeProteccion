@@ -25,7 +25,11 @@ var fn = {
         $('#btnGuardarReg').tap(fn.GuardarReg);
         $('#btn_ir_asignacion_epp').tap(fn.ir_asignacion_epp);  
         $('#btn_ir_boletas_epp').tap(fn.ir_boletas_epp);  
-        $('#btn_salir_sistema_epp').tap(fn.salir_sistema_epp); 
+        $('#btn_salir_sistema_epp').tap(fn.salir_sistema_epp);
+        $('#BtnSalir_3').tap(fn.SalirYRestablecer_3); 
+        $('#btn_buscar_por_n_empleado').tap(fn.buscar_por_n_empleado); 
+
+        
 
 
                
@@ -187,6 +191,27 @@ var fn = {
         window.localStorage.setItem("user",'');
          window.localStorage.setItem("revisa",'');
          window.location.href = '#login';
+    },
+    SalirYRestablecer_3: function()
+    {
+         /*window.localStorage.setItem("user",'');
+         window.localStorage.setItem("revisa",'');
+         window.location.href = '#login'; */
+         window.location.href = '#Menu';  
+    },
+    buscar_por_n_empleado: function()
+    {
+        var n_empleado = $('#textNUMERO_EMPLEADO_3').val();         
+
+        if(n_empleado != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            almacen.Consulta_informacion_empleado();
+            $.mobile.loading("hide");
+        }
+        else{
+            navigator.notification.alert("Ingrese el # de empleado",null,"Error al Ingresar","Aceptar");///*PARAMOVIL
+            //alert("Ingrese los datos requeridos");///*PARAWEB
+        }   
     }
 
     

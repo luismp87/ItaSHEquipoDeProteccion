@@ -243,6 +243,54 @@ $.ajax({
 		},
 									eliminarreg: function(tx){
 									tx.executeSql("DELETE FROM ita_sh_reg_equipo_proteccion");
+	},
+	Consulta_informacion_empleado: function(){
+		///Area autentificacion base de datos
+/////
+almacen.numero_Empleado =  $('#textNUMERO_EMPLEADO_3').val();
+$.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/ConsultaNumeroEmpleado',              
+                data: {numeroEmpleado: almacen.numero_Empleado},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                    	if(msg[i].Respuesta == "encontro")
+                            {     
+
+                            $("#Select").append('<option value='+msg[i].Nombre+'>'+msg[i].Nombre+'</option>');                        	
+                        		/*$('#textREVISO').val(""+ msg[i].Nombre);
+                        		$('#textREVISO_3').val(""+ msg[i].Nombre);
+                        		window.localStorage.setItem("revisa",""+ msg[i].Nombre);
+                        		window.localStorage.setItem("user",usuariof);
+								window.localStorage.setItem("origen",origenf);
+								$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+								$("#textORIGEN_2").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+								$("#textORIGEN_3").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+								$('#txtusuario').val(""); 
+        						$('#txtcontrasena').val("");
+        						$('#txtnumero_Empleado_realiza').val("");
+ 								//window.location.href = '#Registro';
+ 								window.location.href = '#Menu'; */								       
+                            }
+                            else
+                            {
+								navigator.notification.alert("Verifique el número de empleado.",null,"Error","Aceptar");///*PARAMOVIL
+                            }
+                    	
+                    }); 
+         
+        },
+        error: function(jq, txt){
+                    //alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" +jq + txt.responseText);///*PARAWEB
+                    navigator.notification.alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" + jq + txt.responseText,null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
+                }
+            });
+/////
+
+
+
 	}
 
 
