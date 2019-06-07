@@ -254,12 +254,14 @@ $.ajax({
                 data: {numeroEmpleado: almacen.numero_Empleado},
                 dataType: "json",
                 success: function (msg){
+                	var encontro_RESULTADOS = 0;
                     $.mobile.loading("hide");
                     $('select#Select option').remove();
                     $("#Select").append('<option value="0" selected>Seleccione el empleado</option>');
                     $.each(msg,function(i,item){					
                     	if(msg[i].Respuesta == "encontro")
                             {     
+                            encontro_RESULTADOS = 1;
 
                             $("#Select").append('<option value=' +msg[i].Nombre+'>'+msg[i].Nombre+'</option>');                        	
 								       
@@ -270,6 +272,10 @@ $.ajax({
                             }                                                
                     });                     
                     $('select#Select').val("0").change();
+                    if(encontro_RESULTADOS == 1)
+                    {
+                    navigator.notification.alert("Busqueda finalizada.",null,"Busqueda exitosa","Aceptar");///*PARAMOVIL	
+                    }
          			
         },
         error: function(jq, txt){
