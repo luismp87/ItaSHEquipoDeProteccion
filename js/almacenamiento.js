@@ -259,7 +259,7 @@ $.ajax({
                     	if(msg[i].Respuesta == "encontro")
                             {     
 
-                            $("#Select").append('<option value='+msg[i].Nombre+'>'+msg[i].Nombre+'</option>');                        	
+                            $("#Select").append('<option value=' +msg[i].Nombre+'>'+msg[i].Nombre+'</option>');                        	
                         		/*$('#textREVISO').val(""+ msg[i].Nombre);
                         		$('#textREVISO_3').val(""+ msg[i].Nombre);
                         		window.localStorage.setItem("revisa",""+ msg[i].Nombre);
