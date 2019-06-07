@@ -47,7 +47,7 @@ var fn = {
         var registros = $('#NumUsuarios').val();  
         if(registros == 0)
             {
-                $.mobile.loading("show",{theme: 'b'});
+                //$.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/enviarcatalogocompletodeusuarios',              
@@ -207,7 +207,7 @@ var fn = {
         if(n_empleado != ''){           
             $.mobile.loading("show",{theme: 'b'});
             almacen.Consulta_informacion_empleado();
-            $.mobile.loading("hide");
+            //$.mobile.loading("hide");
         }
         else{
             navigator.notification.alert("Ingrese el # de empleado",null,"Error al Ingresar","Aceptar");///*PARAMOVIL
