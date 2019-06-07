@@ -266,7 +266,7 @@ $.ajax({
                             }
                             else
                             {
-								navigator.notification.alert("Verifique el número de empleado.",null,"Advertencia","Aceptar");///*PARAMOVIL
+								navigator.notification.alert("Verifique el número de empleado.",null,"Sin resultado","Aceptar");///*PARAMOVIL
                             }                                                
                     });                     
                     $('select#Select').val("0").change();
