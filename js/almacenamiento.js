@@ -270,11 +270,11 @@ $.ajax({
                             }                                                
                     });                     
                     $('select#Select').val("0").change();
-         			navigator.notification.alert("Busqueda finalizada.",null,"Aviso","Aceptar");///*PARAMOVIL
+         			
         },
         error: function(jq, txt){
                     //alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" +jq + txt.responseText);///*PARAWEB
-                    navigator.notification.alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" + jq + txt.responseText,null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
+                    navigator.notification.alert("Error al consultar el nombre del empleado " + jq + txt.responseText,null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
                 }
             });
 /////

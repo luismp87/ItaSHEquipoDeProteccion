@@ -224,8 +224,28 @@
                     </li>
 
                     <li>
-                        <label>Fecha alta boleta:</label>
+                        <b class="etiquetaverde">Fecha de alta de boleta:</b>
                         <input type="date" id="textFECHA_ALTA_BOLETA">                        
+                    </li>
+
+                    <li><b class="etiquetaverde">Folio de la boleta:</b>
+                        <input type="text" class="entrada_texto" id="textFOLIO_BOLETA" placeholder="Folio de la boleta">
+                    </li>
+
+                    <li>
+                        <fieldset data-role="controlgroup">
+                            <legend>Causa del reporte:</legend>
+                              <b class="etiquetaverde">Acto inseguro</b>
+                              <input type="checkbox" name="acto" id="cheAI" value="AI">
+                              <b class="etiquetaverde">No utilizar EPP</b>
+                              <input type="checkbox" name="acto" id="cheNUEPP" value="NUEPP">
+                              <b class="etiquetaverde">Otras</b>
+                              <input type="checkbox" name="acto" id="cheOTRO" value="OTRO">    
+                          </fieldset>                        
+                    </li>
+
+                    <li><b class="etiquetaverde">Descripción del reporte:</b>
+                        <textarea name="Descripcio_reporte" id="textDESCRIPCION_REPORTE" rows="2" maxlength="100"></textarea>
                     </li>
 
                      <li><b class="etiquetaverde">Realiza:</b>
