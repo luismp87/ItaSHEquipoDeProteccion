@@ -255,8 +255,8 @@ $.ajax({
                 dataType: "json",
                 success: function (msg){
                     $.mobile.loading("hide");
-                    $.each(msg,function(i,item){
-					$('select option').remove();
+                    $('select#Select option').remove();
+                    $.each(msg,function(i,item){					
                     	if(msg[i].Respuesta == "encontro")
                             {     
 
@@ -267,9 +267,10 @@ $.ajax({
                             {
 								navigator.notification.alert("Verifique el número de empleado.",null,"Error","Aceptar");///*PARAMOVIL
                             }
-                            $('select#Select').val('Seleccione el empleado');
+                            
                     	
                     }); 
+                    $('select#Select').val('Seleccione el empleado');
          
         },
         error: function(jq, txt){
