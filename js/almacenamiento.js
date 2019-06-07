@@ -256,28 +256,18 @@ $.ajax({
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
+					$('select option').remove();
                     	if(msg[i].Respuesta == "encontro")
                             {     
 
                             $("#Select").append('<option value=' +msg[i].Nombre+'>'+msg[i].Nombre+'</option>');                        	
-                        		/*$('#textREVISO').val(""+ msg[i].Nombre);
-                        		$('#textREVISO_3').val(""+ msg[i].Nombre);
-                        		window.localStorage.setItem("revisa",""+ msg[i].Nombre);
-                        		window.localStorage.setItem("user",usuariof);
-								window.localStorage.setItem("origen",origenf);
-								$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
-								$("#textORIGEN_2").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
-								$("#textORIGEN_3").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
-								$('#txtusuario').val(""); 
-        						$('#txtcontrasena').val("");
-        						$('#txtnumero_Empleado_realiza').val("");
- 								//window.location.href = '#Registro';
- 								window.location.href = '#Menu'; */								       
+								       
                             }
                             else
                             {
 								navigator.notification.alert("Verifique el número de empleado.",null,"Error","Aceptar");///*PARAMOVIL
                             }
+                            $('select#Select').val('Seleccione el empleado');
                     	
                     }); 
          

@@ -3,7 +3,8 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){ 
-    $('#textREVISO').val(""+ window.localStorage.getItem("revisa"));          
+    $('#textREVISO').val(""+ window.localStorage.getItem("revisa"));
+    $('#textREVISO_3').val(""+ window.localStorage.getItem("revisa"));          
         if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
@@ -17,7 +18,7 @@ var fn = {
         else
         {
         $("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
-        window.location.href = '#Registro';     
+        window.location.href = '#Menu';     
         }
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL);   
