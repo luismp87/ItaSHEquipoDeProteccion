@@ -256,7 +256,7 @@ $.ajax({
                 success: function (msg){
                     $.mobile.loading("hide");
                     $('select#Select option').remove();
-                    $("#Select").append('<option value=0>Seleccione el empleado</option>');
+                    $("#Select").append('<option value="0" selected>Seleccione el empleado</option>');
                     $.each(msg,function(i,item){					
                     	if(msg[i].Respuesta == "encontro")
                             {     
