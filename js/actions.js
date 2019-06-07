@@ -54,7 +54,7 @@ var fn = {
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
-                    $.mobile.loading("hide");
+                    //$.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         myArray[i] = msg[i].usuario + "','" + msg[i].pass + "','" + msg[i].origen;
                     }); 

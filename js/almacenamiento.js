@@ -267,12 +267,10 @@ $.ajax({
                             else
                             {
 								navigator.notification.alert("Verifique el número de empleado.",null,"Advertencia","Aceptar");///*PARAMOVIL
-                            }
-                            
-                    	
+                            }                                                
                     }); 
                     $('select#Select').val('0');
-         
+         			navigator.notification.alert("Busqueda finalizada.",null,"Aviso","Aceptar");///*PARAMOVIL
         },
         error: function(jq, txt){
                     //alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" +jq + txt.responseText);///*PARAWEB
