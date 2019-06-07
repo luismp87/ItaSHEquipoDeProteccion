@@ -25,6 +25,8 @@ var fn = {
         $('#btnGuardarReg').tap(fn.GuardarReg);
         $('#btn_ir_asignacion_epp').tap(fn.ir_asignacion_epp);  
         $('#btn_ir_boletas_epp').tap(fn.ir_boletas_epp);  
+        $('#btn_salir_sistema_epp').tap(fn.salir_sistema_epp); 
+
 
                
                 
@@ -99,9 +101,10 @@ var fn = {
     },
     SalirYRestablecer: function()
     {
-         window.localStorage.setItem("user",'');
+         /*window.localStorage.setItem("user",'');
          window.localStorage.setItem("revisa",'');
-         window.location.href = '#login';   
+         window.location.href = '#login'; */
+         window.location.href = '#Menu';  
     },
     GuardarReg: function()
     {
@@ -174,11 +177,16 @@ var fn = {
     ir_asignacion_epp: function()
     {
         window.location.href = '#Registro';     
-    }
-    ,    
+    },    
     ir_boletas_epp: function()
     {
         window.location.href = '#RegistroBoleta';     
+    },
+    salir_sistema_epp: function()
+    {
+        window.localStorage.setItem("user",'');
+         window.localStorage.setItem("revisa",'');
+         window.location.href = '#login';
     }
 
     
