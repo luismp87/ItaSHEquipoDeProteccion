@@ -204,7 +204,7 @@ var fn = {
     {
         var n_empleado = $('#textNUMERO_EMPLEADO_3').val();         
 
-        if(n_empleado != ''){   
+        if(n_empleado != ''){           
             $.mobile.loading("show",{theme: 'b'});
             almacen.Consulta_informacion_empleado();
             $.mobile.loading("hide");
