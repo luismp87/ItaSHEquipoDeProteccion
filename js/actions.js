@@ -225,7 +225,7 @@ var fn = {
         fn.numero_empleado = $('#textNUMERO_EMPLEADO_3').val();
         fn.usuario = window.localStorage.getItem("user");
         fn.origen = window.localStorage.getItem("origen");
-        fn.nombre_empleado = $('#Select').val();
+        fn.nombre_empleado = $('#Select option:selected').text();//$('#Select').val();
         fn.nombre_sup_sh_realizo = $('#textREVISO_3').val();
         fn.fecha_creacion_boleta = $('#textFECHA_ALTA_BOLETA').val();
         fn.folio_boleta = $('#textFOLIO_BOLETA').val();
@@ -247,7 +247,7 @@ alert("" + fn.folio_boleta);
 alert("" + fn.causa_boleta); 
 alert("" + fn.observaciones_boleta);   
 alert("" + fn.nombre_sup_produccion);   
-    
+
    
         /*
         if(navigator.connection.type != Connection.NONE)
