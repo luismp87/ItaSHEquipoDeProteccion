@@ -23,13 +23,12 @@ var server = {
         folio_boleta: null, 
         causa_boleta: null, 
         observaciones_boleta: null, 
-        nombre_sup_produccion: null
+        nombre_sup_produccion: null,
            
                
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizar: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,nombre_empleado,nombre_reviso)
 {
-  
 server.puesto_trabajo = puesto_trabajo; 
 server.numero_empleado = numero_empleado; 
 server.area = area; 
