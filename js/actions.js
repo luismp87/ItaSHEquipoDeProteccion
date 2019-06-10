@@ -220,14 +220,9 @@ var fn = {
         }   
     },
     GuardarReg_3: function()
-    {
-       if($('#Select option:selected').text() == "Seleccione el empleado")
-        {
-          navigator.notification.alert("Seleccione el nombre del empleado",null,"Advertencia","Aceptar");   
-        $("#myPopup").popup("close");  
-        }
+    {      
 
-       if(($('#textFOLIO_BOLETA').val() != "") && ($('#textNUMERO_EMPLEADO_3').val() != "") && ($('#textFECHA_ALTA_BOLETA').val() != ""))
+       if(($('#textFOLIO_BOLETA').val() != "") && ($('#textNUMERO_EMPLEADO_3').val() != "") && ($('#textFECHA_ALTA_BOLETA').val() != "") && ($('#Select option:selected').text() == "Seleccione el empleado"))
         {
         
         fn.numero_empleado = $('#textNUMERO_EMPLEADO_3').val();
@@ -273,7 +268,7 @@ var fn = {
         }
         else
         {
-        navigator.notification.alert("Ingrese Folio de boleta, fecha de creación de la misma o el número de empleado",null,"Advertencia","Aceptar");   
+        navigator.notification.alert("Ingrese Folio de boleta, fecha de creación de la misma, el número de empleado o seleccione el nombre del empleado",null,"Advertencia","Aceptar");   
         $("#myPopup").popup("close");
         }
 
