@@ -222,8 +222,10 @@ var fn = {
     GuardarReg_3: function()
     {      
 
-       if(($('#textFOLIO_BOLETA').val() != "") && ($('#textNUMERO_EMPLEADO_3').val() != "") && ($('#textFECHA_ALTA_BOLETA').val() != "") && ($('#Select option:selected').text() == "Seleccione el empleado"))
+       if(($('#textFOLIO_BOLETA').val() != "") && ($('#textNUMERO_EMPLEADO_3').val() != "") && ($('#textFECHA_ALTA_BOLETA').val() != "") && ($('#Select option:selected').text() != "Seleccione el empleado"))
         {
+
+            alert("$('#Select option:selected').text()");
         
         fn.numero_empleado = $('#textNUMERO_EMPLEADO_3').val();
         fn.usuario = window.localStorage.getItem("user");
