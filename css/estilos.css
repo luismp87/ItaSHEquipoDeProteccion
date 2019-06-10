@@ -35,7 +35,7 @@ text-align: center;
 	color: red !important;
 }
 
-#btnGuardarReg, #btnGuardarReg_3 , #textORIGEN ,#textORIGEN_3,#textORIGEN_2, #btnGuardar, .btnverde{
+#btnGuardarReg, #btnGuardarReg_3 , #textORIGEN ,#textORIGEN_3,#textORIGEN_2, #btnGuardar,#btnGuardar_3, .btnverde{
 	color: white !important;
   background-color: green !important;
 }
