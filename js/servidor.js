@@ -298,6 +298,7 @@ $.ajax({
 
 
         sincronizarRegistrados_3: function(numero_empleado){
+            alert("entro4");
 
             server.numero_empleado = numero_empleado;
             //navigator.notification.alert("enviando ser: " + puesto_trabajo,null,"mensaje 2","Aceptar");              

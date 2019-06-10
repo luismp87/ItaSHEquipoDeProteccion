@@ -337,6 +337,7 @@ $.ajax({
 
 
 		leerinformacionregistrada_boletas_en_movil: function(tx){
+			alert("entro1");
 			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExiste, null, null);			
 			almacen.db.transaction(almacen.leerinforegistrada_boletas_en_movil, null, null);
@@ -352,13 +353,14 @@ $.ajax({
 							campos = campos + "['"+ t.rows.item(i).numero_empleado +"','"+t.rows.item(i).usuario +"','"+t.rows.item(i).origen +"','"+t.rows.item(i).nombre_empleado +"','"+t.rows.item(i).nombre_sup_sh_realizo +"','"+t.rows.item(i).fecha_creacion_boleta +"','"+t.rows.item(i).folio_boleta +"','"+t.rows.item(i).causa_boleta +"','"+t.rows.item(i).observaciones_boleta +"','"+t.rows.item(i).nombre_sup_produccion +"','"+t.rows.item(i).fecha_alta +"']";												
 							//navigator.notification.alert("selecciono lo que se va a mandar",null,"mensaje 2","Aceptar"); 				                                  }
 											
-
+    alert("entro2");
 	if(encontro == 0)
 	{
 		//navigator.notification.alert("Sin información registrada por migrar al servidor", null, "Advertencia", "Aceptar");
 	}
 	else if(encontro == 1)
 	{
+		alert("entro3");
 		server.sincronizarRegistrados_3(campos);//Enviar a servidor
 		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
 	}

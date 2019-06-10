@@ -18,6 +18,8 @@ var fn = {
         else
         {
         $("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+        $("#textORIGEN_2").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+        $("#textORIGEN_3").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
         window.location.href = '#Menu';     
         }
         //PARA MOVIL
