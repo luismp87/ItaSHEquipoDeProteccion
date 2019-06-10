@@ -29,6 +29,7 @@ var fn = {
         $('#btn_salir_sistema_epp').tap(fn.salir_sistema_epp);
         $('#BtnSalir_3').tap(fn.SalirYRestablecer_3); 
         $('#btn_buscar_por_n_empleado').tap(fn.buscar_por_n_empleado); 
+        $('#btnGuardarReg_3').tap(fn.GuardarReg_3);
 
         
 
@@ -213,6 +214,80 @@ var fn = {
             navigator.notification.alert("Ingrese el # de empleado",null,"Error al Ingresar","Aceptar");///*PARAMOVIL
             //alert("Ingrese los datos requeridos");///*PARAWEB
         }   
+    },
+    GuardarReg_3: function()
+    {
+       if(($('#textFOLIO_BOLETA').val() != "") && ($('#textNUMERO_EMPLEADO_3').val() != "") && ($('#textFECHA_ALTA_BOLETA').val() != ""))
+        {
+        
+
+
+        fn.numero_empleado = $('#textNUMERO_EMPLEADO_3').val();
+        fn.usuario = window.localStorage.getItem("user");
+        fn.origen = window.localStorage.getItem("origen");
+        fn.nombre_empleado = $('#Select').val();
+        fn.nombre_sup_sh_realizo = $('#textREVISO_3').val();
+        fn.fecha_creacion_boleta = $('#textFECHA_ALTA_BOLETA').val();
+        fn.folio_boleta = $('#textFOLIO_BOLETA').val();
+        fn.causa_boleta = $("input:radio[name=acto]:checked").val()
+        fn.observaciones_boleta = $('#textDESCRIPCION_REPORTE').val();
+        fn.nombre_sup_produccion = $('#textNOMBRE_DEL_SUPERVISOR').val();
+
+
+        var d = new Date();
+        fn.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+
+alert("" + fn.numero_empleado);    
+alert("" + fn.usuario); 
+alert("" + fn.origen); 
+alert("" + fn.nombre_empleado); 
+alert("" + fn.nombre_sup_sh_realizo); 
+alert("" + fn.fecha_creacion_boleta); 
+alert("" + fn.folio_boleta); 
+alert("" + fn.causa_boleta); 
+alert("" + fn.observaciones_boleta);   
+alert("" + fn.nombre_sup_produccion);   
+    
+   
+        /*
+        if(navigator.connection.type != Connection.NONE)
+            {                
+                server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),window.localStorage.getItem("user"),window.localStorage.getItem("origen"),fn.nombre_empleado,fn.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));//Enviar a servidor                                
+            }
+            else
+            {
+                                almacen.guardarRegistro(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta,fn.nombre_empleado,fn.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));
+                               //$("#myPopup").popup("open")
+                                
+                                $('#textPUESTO_TRABAJO').val("");
+                                $('#textNUMERO_EMPLEADO').val("");
+                                $('#textAREA').val("");
+                                $('#textBOTAS_SEGURIDAD').val("No").change();
+                                $('#textCASCO').val("No").change();
+                                $('#textGUANTES').val("No").change();
+                                $('#textFAJA').val("No").change();
+                                $('#textGAFAS').val("No").change();
+                                $('#textRESPIRADOR3M6200').val("No").change();
+                                $('#textRESPIRADOR3M8210').val("No").change();
+                                $('#textTAPONESAUDITIVOS').val("No").change();
+                                $('#textMUNEQUERAS').val("No").change();
+                                $('#textOTROS').val("No").change();
+                                $('#textNOMBRE_EMPLEADO').val("");
+                                $('#textOBSERVACIONES').val("");
+                                
+                                $("#myPopup").popup("close");
+            }
+
+            */
+
+
+        }
+        else
+        {
+        navigator.notification.alert("Ingrese Puesto y Número de empleado",null,"Advertencia","Aceptar");   
+        $("#myPopup").popup("close");
+        }
+
     }
 
     
