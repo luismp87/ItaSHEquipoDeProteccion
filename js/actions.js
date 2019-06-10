@@ -220,12 +220,39 @@ var fn = {
         }   
     },
     GuardarReg_3: function()
-    {      
+    {
+        var status = "BIEN";
 
-       if(($('#textFOLIO_BOLETA').val() != "") && ($('#textNUMERO_EMPLEADO_3').val() != "") && ($('#textFECHA_ALTA_BOLETA').val() != "") && ($('#Select option:selected').text() != "Seleccione el empleado"))
-        {
+           if(($('#textFOLIO_BOLETA').val() == "") && (status == "BIEN"))
+           {
+                status = "FALTAN";
+                navigator.notification.alert("Ingrese el folio de boleta",null,"Advertencia","Aceptar");                           
+           }
 
-            alert("$('#Select option:selected').text()");
+
+           if(($('#textNUMERO_EMPLEADO_3').val() == "") && (status == "BIEN"))
+           {
+                status = "FALTAN";
+                navigator.notification.alert("Ingrese el Número de empleado",null,"Advertencia","Aceptar");             
+           }
+
+           if(($('#textFECHA_ALTA_BOLETA').val() == "") && (status == "BIEN"))
+           {
+                status = "FALTAN";
+                navigator.notification.alert("Ingrese la fecha de creación de la boleta",null,"Advertencia","Aceptar");             
+           }
+
+           if(($('#Select option:selected').text() == "Seleccione el empleado") && (status == "BIEN"))
+           {
+                status = "FALTAN";
+                navigator.notification.alert("Seleccione el nombre del empleado",null,"Advertencia","Aceptar");               
+           }
+        
+      
+
+
+       if(status == "BIEN")
+        {            
         
         fn.numero_empleado = $('#textNUMERO_EMPLEADO_3').val();
         fn.usuario = window.localStorage.getItem("user");
@@ -262,17 +289,13 @@ var fn = {
                                 $('#textFOLIO_BOLETA').val("");
                                 $('#textDESCRIPCION_REPORTE').val("");
                                 $('#textNOMBRE_DEL_SUPERVISOR').val("");    
-            }
-
-            
-
-
+            }        
         }
         else
         {
-        navigator.notification.alert("Ingrese Folio de boleta, fecha de creación de la misma, el número de empleado o seleccione el nombre del empleado",null,"Advertencia","Aceptar");   
-        $("#myPopup").popup("close");
+            $("#myPopup_3").popup("close"); 
         }
+        
 
     }
 
