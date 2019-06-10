@@ -30,7 +30,7 @@ var server = {
 /*ENVIAR AL SERVER EL CAPTURADO EN LA PANTALLA DE CARACTERISTICAS AL SERVIDOR UN SOLO REGISTRO*/
 sincronizar: function(puesto_trabajo, numero_empleado,area,botas_seguridad,casco,guantes,faja,gafas,respirador_3m_6200,respirador_3m_8210,tapones_auditivos,munequeras,otros,observaciones,usuario,origen,nombre_empleado,nombre_reviso)
 {
-    alert("entro2");
+
 server.puesto_trabajo = puesto_trabajo; 
 server.numero_empleado = numero_empleado; 
 server.area = area; 
@@ -200,7 +200,7 @@ $.ajax({
     /*ENVIAR AL SERVER LA INFORMACION RELACIONADA CON EL ALTA DE BOLETA*/
 sincronizar_3: function(numero_empleado,usuario,origen,nombre_empleado,nombre_sup_sh_realizo,fecha_creacion_boleta,folio_boleta,causa_boleta,observaciones_boleta,nombre_sup_produccion)
 {
-alert("entro2");
+
 server.numero_empleado = numero_empleado;
 server.usuario = usuario;
 server.origen = origen;
@@ -215,7 +215,7 @@ var d = new Date();
 server.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
 var fecha_alta = server.fecha_alta;
 
- alert("entro25");
+
 $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg_3',                
@@ -234,28 +234,22 @@ $.ajax({
                 dataType: "json",
                 success: function (msg){
                     $.mobile.loading("hide");
-                    alert("entro3");
+                    
                     $.each(msg,function(i,item){
                         if(msg[i].valor1 == "encontro")
                             {                           
                                 navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia" ,"Aceptar");   
-                                //$("#myPopup").popup("open")
-                                /*$("#myPopup").popup("close");
-                                $('#textPUESTO_TRABAJO').val("");
-                                $('#textNUMERO_EMPLEADO').val("");
-                                $('#textAREA').val("");
-                                $('#textBOTAS_SEGURIDAD').val("No").change();
-                                $('#textCASCO').val("No").change();
-                                $('#textGUANTES').val("No").change();
-                                $('#textFAJA').val("No").change();
-                                $('#textGAFAS').val("No").change();
-                                $('#textRESPIRADOR3M6200').val("No").change();
-                                $('#textRESPIRADOR3M8210').val("No").change();
-                                $('#textTAPONESAUDITIVOS').val("No").change();
-                                $('#textMUNEQUERAS').val("No").change();
-                                $('#textOTROS').val("No").change();
-                                $('#textOBSERVACIONES').val("");
-                                $('#textNOMBRE_EMPLEADO').val("");*/
+                               //$("#myPopup").popup("open")
+                                $("#myPopup_3").popup("close");
+
+                                $('#textNUMERO_EMPLEADO_3').val("");
+                                $('select#Select option').remove();
+                                $("#Select").append('<option value="0" selected>Seleccione el empleado</option>');
+                                $('select#Select').val("0").change();
+                                $('#textFECHA_ALTA_BOLETA').val("");
+                                $('#textFOLIO_BOLETA').val("");
+                                $('#textDESCRIPCION_REPORTE').val("");
+                                $('#textNOMBRE_DEL_SUPERVISOR').val("");                                
                                
                             }
                         else
@@ -267,27 +261,22 @@ $.ajax({
                 },
                 error: function(jq, txt){
                     
-                    /*navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
+                    //alert(jq + txt.responseText);
+                    //navigator.notification.alert(jq + txt.responseText,null,"Error","Aceptar");
+                    navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
 
-                    almacen.guardarRegistro(server.puesto_trabajo,server.numero_empleado,server.area,server.botas_seguridad,server.casco,server.guantes,server.faja,server.gafas,server.respirador_3m_6200,server.respirador_3m_8210,server.tapones_auditivos,server.munequeras,server.otros,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario,server.origen,server.fecha_alta,server.nombre_empleado,server.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));
+                    almacen.guardarRegistro_3(server.numero_empleado,server.usuario,server.origen,server.nombre_empleado,server.nombre_sup_sh_realizo,server.fecha_creacion_boleta,server.folio_boleta,server.causa_boleta,server.observaciones_boleta,server.nombre_sup_produccion,server.fecha_alta);
                                //$("#myPopup").popup("open")
-                                $("#myPopup").popup("close");
-                                $('#textPUESTO_TRABAJO').val("");
-                                $('#textNUMERO_EMPLEADO').val("");
-                                $('#textAREA').val("");
-                                $('#textBOTAS_SEGURIDAD').val("No").change();
-                                $('#textCASCO').val("No").change();
-                                $('#textGUANTES').val("No").change();
-                                $('#textFAJA').val("No").change();
-                                $('#textGAFAS').val("No").change();
-                                $('#textRESPIRADOR3M6200').val("No").change();
-                                $('#textRESPIRADOR3M8210').val("No").change();
-                                $('#textTAPONESAUDITIVOS').val("No").change();
-                                $('#textMUNEQUERAS').val("No").change();
-                                $('#textOTROS').val("No").change();
-                                $('#textOBSERVACIONES').val("");
-                                $('#textNOMBRE_EMPLEADO').val("");
-                               */ 
+                                $("#myPopup_3").popup("close");
+
+                                $('#textNUMERO_EMPLEADO_3').val("");
+                                $('select#Select option').remove();
+                                $("#Select").append('<option value="0" selected>Seleccione el empleado</option>');
+                                $('select#Select').val("0").change();
+                                $('#textFECHA_ALTA_BOLETA').val("");
+                                $('#textFOLIO_BOLETA').val("");
+                                $('#textDESCRIPCION_REPORTE').val("");
+                                $('#textNOMBRE_DEL_SUPERVISOR').val("");    
                 }
             }).done(server.sincronizado_3);
 

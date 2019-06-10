@@ -25,6 +25,13 @@ var almacen = {
 	nombre_empleado: null,
 	nombre_reviso: null,
 
+	nombre_sup_sh_realizo : null, 
+    fecha_creacion_boleta : null, 
+    folio_boleta : null, 
+    causa_boleta : null, 
+    observaciones_boleta : null, 
+    nombre_sup_produccion : null,
+
 	CreaSINOExiste: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (usuario,pass,origen)");										
 									},
@@ -287,7 +294,45 @@ $.ajax({
 
 
 
-	}
+	},
+
+
+
+
+
+
+
+
+
+		guardarRegistro_3: function(numero_empleado,usuario,origen,nombre_empleado,nombre_sup_sh_realizo,fecha_creacion_boleta,folio_boleta,causa_boleta,observaciones_boleta,nombre_sup_produccion,fecha_alta){
+
+
+		almacen.numero_empleado = numero_empleado;
+		almacen.usuario = usuario;
+		almacen.origen = origen;
+		almacen.nombre_empleado = nombre_empleado;
+		almacen.nombre_sup_sh_realizo = nombre_sup_sh_realizo;
+		almacen.fecha_creacion_boleta = fecha_creacion_boleta;
+		almacen.folio_boleta = folio_boleta;
+		almacen.causa_boleta = causa_boleta;
+		almacen.observaciones_boleta = observaciones_boleta;
+		almacen.nombre_sup_produccion = nombre_sup_produccion;
+
+		var d = new Date(); 		
+		almacen.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();
+		
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
+			almacen.db.transaction(almacen.GuardarRegistro, almacen.error, almacen.GuardadoCorrectoLocal);
+			
+		},
+									GuardarRegistro: function(tx){
+										tx.executeSql("CREATE TABLE IF NOT EXISTS Ita_Sh_Boleta_Sancion (numero_empleado,usuario,origen,nombre_empleado,nombre_sup_sh_realizo,fecha_creacion_boleta,folio_boleta,causa_boleta,observaciones_boleta,nombre_sup_produccion,fecha_alta)");
+										tx.executeSql("INSERT INTO Ita_Sh_Boleta_Sancion (numero_empleado,usuario,origen,nombre_empleado,nombre_sup_sh_realizo,fecha_creacion_boleta,folio_boleta,causa_boleta,observaciones_boleta,nombre_sup_produccion,fecha_alta) VALUES ("+almacen.numero_empleado+",'"+almacen.usuario+"','"+almacen.origen+"','"+almacen.nombre_empleado+"','"+almacen.nombre_sup_sh_realizo+"','"+almacen.fecha_creacion_boleta+"',"+almacen.folio_boleta+",'"+almacen.causa_boleta+"','"+almacen.observaciones_boleta+"','"+almacen.nombre_sup_produccion+"','"+almacen.fecha_alta+"')");       
+										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
+										
+										
+		}
 
 
 }
