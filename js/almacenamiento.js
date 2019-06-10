@@ -304,7 +304,8 @@ $.ajax({
 
 
 
-		guardarRegistro_3: function(numero_empleado,usuario,origen,nombre_empleado,nombre_sup_sh_realizo,fecha_creacion_boleta,folio_boleta,causa_boleta,observaciones_boleta,nombre_sup_produccion,fecha_alta){
+		guardarRegistro_3: function(numero_empleado,usuario,origen,nombre_empleado,nombre_sup_sh_realizo,fecha_creacion_boleta,folio_boleta,causa_boleta,observaciones_boleta,nombre_sup_produccion,fecha_alta)
+		{
 
 
 		almacen.numero_empleado = numero_empleado;
@@ -332,7 +333,47 @@ $.ajax({
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
 										
 										
-		}
+		},
+
+
+		leerinformacionregistrada_boletas_en_movil: function(tx){
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExiste, null, null);			
+			almacen.db.transaction(almacen.leerinforegistrada_boletas_en_movil, null, null);
+
+	},
+									leerinforegistrada_boletas_en_movil: function(tx){
+										
+									tx.executeSql("SELECT numero_empleado,usuario,origen,nombre_empleado,nombre_sup_sh_realizo,fecha_creacion_boleta,folio_boleta,causa_boleta,observaciones_boleta,nombre_sup_produccion,fecha_alta FROM Ita_Sh_Boleta_Sancion", [], function(tx2, t){
+									var campos = "";
+									var encontro = 0;
+											for(i = 0; i < t.rows.length; i++){
+							encontro = 1;
+							campos = campos + "["+ t.rows.item(i).numero_empleado +",'"+t.rows.item(i).usuario +"','"+t.rows.item(i).origen +"','"+t.rows.item(i).nombre_empleado +"','"+t.rows.item(i).nombre_sup_sh_realizo +"','"+t.rows.item(i).fecha_creacion_boleta +"',"+t.rows.item(i).folio_boleta +",'"+t.rows.item(i).causa_boleta +"','"+t.rows.item(i).observaciones_boleta +"','"+t.rows.item(i).nombre_sup_produccion +"','"+t.rows.item(i).fecha_alta +"']";												
+							//navigator.notification.alert("selecciono lo que se va a mandar",null,"mensaje 2","Aceptar"); 				                                  }
+											
+
+	if(encontro == 0)
+	{
+		//navigator.notification.alert("Sin información registrada por migrar al servidor", null, "Advertencia", "Aceptar");
+	}
+	else if(encontro == 1)
+	{
+		server.sincronizarRegistrados_3(campos);//Enviar a servidor
+		//navigator.notification.alert("Se migro informacion local al servidor", null, "Advertencia", "Aceptar");
+	}
+//navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
+								}		});
+	
+	},
+		eliminarregistros_3: function(tx){
+			almacen.db = window.openDatabase("ItaSHEDP","1.0","ItaSHEDP Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
+			almacen.db.transaction(almacen.eliminarreg_3, almacen.error, null);
+		},
+									eliminarreg_3: function(tx){
+									tx.executeSql("DELETE FROM Ita_Sh_Boleta_Sancion");
+	}
 
 
 }

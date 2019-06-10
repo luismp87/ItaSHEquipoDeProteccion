@@ -38,6 +38,7 @@ var fn = {
                 
         //PARA MOVIL
          document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
+         document.addEventListener("online", almacen.leerinformacionregistrada_boletas_en_movil, false);
         ////////////
  
 	},
@@ -242,9 +243,7 @@ var fn = {
         
         if(navigator.connection.type != Connection.NONE)
             {     
-alert("entro1");
-                server.sincronizar_3(fn.numero_empleado,fn.usuario,fn.origen,fn.nombre_empleado,fn.nombre_sup_sh_realizo,fn.fecha_creacion_boleta,fn.folio_boleta,fn.causa_boleta,fn.observaciones_boleta,fn.nombre_sup_produccion);//Enviar a servidor                                
-        
+                server.sincronizar_3(fn.numero_empleado,fn.usuario,fn.origen,fn.nombre_empleado,fn.nombre_sup_sh_realizo,fn.fecha_creacion_boleta,fn.folio_boleta,fn.causa_boleta,fn.observaciones_boleta,fn.nombre_sup_produccion);//Enviar a servidor                                        
             }
             else
             {
