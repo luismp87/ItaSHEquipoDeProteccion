@@ -248,26 +248,18 @@ alert("entro1");
             }
             else
             {
-                                /*almacen.guardarRegistro(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta,fn.nombre_empleado,fn.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));
+                                almacen.guardarRegistro_3(fn.numero_empleado,fn.usuario,fn.origen,fn.nombre_empleado,fn.nombre_sup_sh_realizo,fn.fecha_creacion_boleta,fn.folio_boleta,fn.causa_boleta,fn.observaciones_boleta,fn.nombre_sup_produccion,fn.fecha_alta);
                                //$("#myPopup").popup("open")
-                                
-                                $('#textPUESTO_TRABAJO').val("");
-                                $('#textNUMERO_EMPLEADO').val("");
-                                $('#textAREA').val("");
-                                $('#textBOTAS_SEGURIDAD').val("No").change();
-                                $('#textCASCO').val("No").change();
-                                $('#textGUANTES').val("No").change();
-                                $('#textFAJA').val("No").change();
-                                $('#textGAFAS').val("No").change();
-                                $('#textRESPIRADOR3M6200').val("No").change();
-                                $('#textRESPIRADOR3M8210').val("No").change();
-                                $('#textTAPONESAUDITIVOS').val("No").change();
-                                $('#textMUNEQUERAS').val("No").change();
-                                $('#textOTROS').val("No").change();
-                                $('#textNOMBRE_EMPLEADO').val("");
-                                $('#textOBSERVACIONES').val("");
-                                
-                                $("#myPopup").popup("close");*/
+                                $("#myPopup_3").popup("close");
+
+                                $('#textNUMERO_EMPLEADO_3').val("");
+                                $('select#Select option').remove();
+                                $("#Select").append('<option value="0" selected>Seleccione el empleado</option>');
+                                $('select#Select').val("0").change();
+                                $('#textFECHA_ALTA_BOLETA').val("");
+                                $('#textFOLIO_BOLETA').val("");
+                                $('#textDESCRIPCION_REPORTE').val("");
+                                $('#textNOMBRE_DEL_SUPERVISOR').val("");    
             }
 
             
