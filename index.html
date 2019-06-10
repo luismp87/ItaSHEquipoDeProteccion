@@ -55,7 +55,7 @@
         </ul>
 
         <h3>Que desea realizar:</h3>                                
-        <br>
+        
         <table>
                                 <tr>
                                     <td colspan="2"><input type="submit" class="btnverde" value="Asignación de EPP" id="btn_ir_asignacion_epp">
@@ -225,7 +225,7 @@
 
                     <li>
                         <b class="etiquetaverde">Fecha de alta de boleta:</b>
-                        <input type="date" id="textFECHA_ALTA_BOLETA">                        
+                        <input type="date" id="textFECHA_ALTA_BOLETA" placeholder="yyyy-mm-dd">                        
                     </li>
 
                     <li><b class="etiquetaverde">Folio de la boleta:</b>
@@ -236,7 +236,7 @@
                         <fieldset data-role="controlgroup">
                             <legend class="etiquetaverde">Causa del reporte:</legend>
                               <label for="cheAI">Acto inseguro</label>                              
-                              <input type="radio" name="acto" id="cheAI" value="Acto_Inseguro">
+                              <input type="radio" name="acto" id="cheAI" value="Acto_Inseguro" checked>
 
                               <label for="cheNUEPP">No utilizar EPP</label>                              
                               <input type="radio" name="acto" id="cheNUEPP" value="No_Utilizo_EPP">
@@ -248,7 +248,7 @@
 
 
                     <li><b class="etiquetaverde">Descripción del reporte:</b>
-                        <textarea name="Descripcio_reporte" id="textDESCRIPCION_REPORTE" rows="2" maxlength="100"></textarea>
+                        <textarea name="Descripcio_reporte" id="textDESCRIPCION_REPORTE" placeholder="Descripción del reporte" rows="3" maxlength="100"></textarea>
                     </li>
 
                     <li><b class="etiquetaverde">Nombre de supervisor de producción:</b>
