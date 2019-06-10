@@ -247,6 +247,12 @@ var fn = {
                 status = "FALTAN";
                 navigator.notification.alert("Seleccione el nombre del empleado",null,"Advertencia","Aceptar");               
            }
+
+           if(($("input:radio[name=acto]:checked").val() == "") && (status == "BIEN"))
+           {
+                status = "FALTAN";
+                navigator.notification.alert("Seleccione una causa",null,"Advertencia","Aceptar");               
+           }
         
       
 
@@ -261,7 +267,7 @@ var fn = {
         fn.nombre_sup_sh_realizo = $('#textREVISO_3').val();
         fn.fecha_creacion_boleta = $('#textFECHA_ALTA_BOLETA').val();
         fn.folio_boleta = $('#textFOLIO_BOLETA').val();
-        fn.causa_boleta = $("input:radio[name=acto]:checked").val()
+        fn.causa_boleta = $("input:radio[name=acto]:checked").val();
         fn.observaciones_boleta = $('#textDESCRIPCION_REPORTE').val().replace(/[^a-zA-Z 0-9.]+/g,' ');
         fn.nombre_sup_produccion = $('#textNOMBRE_DEL_SUPERVISOR').val().replace(/[^a-zA-Z 0-9.]+/g,' ');
 
