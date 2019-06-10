@@ -349,7 +349,7 @@ $.ajax({
 									var encontro = 0;
 											for(i = 0; i < t.rows.length; i++){
 							encontro = 1;
-							campos = campos + "["+ t.rows.item(i).numero_empleado +",'"+t.rows.item(i).usuario +"','"+t.rows.item(i).origen +"','"+t.rows.item(i).nombre_empleado +"','"+t.rows.item(i).nombre_sup_sh_realizo +"','"+t.rows.item(i).fecha_creacion_boleta +"',"+t.rows.item(i).folio_boleta +",'"+t.rows.item(i).causa_boleta +"','"+t.rows.item(i).observaciones_boleta +"','"+t.rows.item(i).nombre_sup_produccion +"','"+t.rows.item(i).fecha_alta +"']";												
+							campos = campos + "['"+ t.rows.item(i).numero_empleado +"','"+t.rows.item(i).usuario +"','"+t.rows.item(i).origen +"','"+t.rows.item(i).nombre_empleado +"','"+t.rows.item(i).nombre_sup_sh_realizo +"','"+t.rows.item(i).fecha_creacion_boleta +"','"+t.rows.item(i).folio_boleta +"','"+t.rows.item(i).causa_boleta +"','"+t.rows.item(i).observaciones_boleta +"','"+t.rows.item(i).nombre_sup_produccion +"','"+t.rows.item(i).fecha_alta +"']";												
 							//navigator.notification.alert("selecciono lo que se va a mandar",null,"mensaje 2","Aceptar"); 				                                  }
 											
 
