@@ -253,6 +253,12 @@ var fn = {
                 status = "FALTAN";
                 navigator.notification.alert("Seleccione una causa",null,"Advertencia","Aceptar");               
            }
+
+           if(($('#textNOMBRE_DEL_SUPERVISOR').val() == "") && (status == "BIEN"))
+           {
+                status = "FALTAN";
+                navigator.notification.alert("Ingrese el nombre del jefe inmediato del trabajador",null,"Advertencia","Aceptar");               
+           }
         
       
 
