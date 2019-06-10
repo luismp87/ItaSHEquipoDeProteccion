@@ -230,33 +230,24 @@ var fn = {
         fn.fecha_creacion_boleta = $('#textFECHA_ALTA_BOLETA').val();
         fn.folio_boleta = $('#textFOLIO_BOLETA').val();
         fn.causa_boleta = $("input:radio[name=acto]:checked").val()
-        fn.observaciones_boleta = $('#textDESCRIPCION_REPORTE').val();
-        fn.nombre_sup_produccion = $('#textNOMBRE_DEL_SUPERVISOR').val();
+        fn.observaciones_boleta = $('#textDESCRIPCION_REPORTE').val().replace(/[^a-zA-Z 0-9.]+/g,' ');
+        fn.nombre_sup_produccion = $('#textNOMBRE_DEL_SUPERVISOR').val().replace(/[^a-zA-Z 0-9.]+/g,' ');
 
 
         var d = new Date();
-        fn.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
-
-alert("" + fn.numero_empleado);    
-alert("" + fn.usuario); 
-alert("" + fn.origen); 
-alert("" + fn.nombre_empleado); 
-alert("" + fn.nombre_sup_sh_realizo); 
-alert("" + fn.fecha_creacion_boleta); 
-alert("" + fn.folio_boleta); 
-alert("" + fn.causa_boleta); 
-alert("" + fn.observaciones_boleta);   
-alert("" + fn.nombre_sup_produccion);   
+        fn.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();      
 
    
-        /*
+        
         if(navigator.connection.type != Connection.NONE)
-            {                
-                server.sincronizar(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),window.localStorage.getItem("user"),window.localStorage.getItem("origen"),fn.nombre_empleado,fn.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));//Enviar a servidor                                
+            {     
+alert("entro1");
+                server.sincronizar_3(fn.numero_empleado,fn.usuario,fn.origen,fn.nombre_empleado,fn.nombre_sup_sh_realizo,fn.fecha_creacion_boleta,fn.folio_boleta,fn.causa_boleta,fn.observaciones_boleta,fn.nombre_sup_produccion);//Enviar a servidor                                
+        
             }
             else
             {
-                                almacen.guardarRegistro(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta,fn.nombre_empleado,fn.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));
+                                /*almacen.guardarRegistro(fn.puesto_trabajo,fn.numero_empleado,fn.area,fn.botas_seguridad,fn.casco,fn.guantes,fn.faja,fn.gafas,fn.respirador_3m_6200,fn.respirador_3m_8210,fn.tapones_auditivos,fn.munequeras,fn.otros,fn.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),fn.usuario,fn.origen,fn.fecha_alta,fn.nombre_empleado,fn.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));
                                //$("#myPopup").popup("open")
                                 
                                 $('#textPUESTO_TRABAJO').val("");
@@ -275,10 +266,10 @@ alert("" + fn.nombre_sup_produccion);
                                 $('#textNOMBRE_EMPLEADO').val("");
                                 $('#textOBSERVACIONES').val("");
                                 
-                                $("#myPopup").popup("close");
+                                $("#myPopup").popup("close");*/
             }
 
-            */
+            
 
 
         }
