@@ -216,7 +216,80 @@ server.fecha_alta = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear(
 var fecha_alta = server.fecha_alta;
 
  alert("entro25");
+$.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg_3',                
+                data: {
+                    numero_empleado: numero_empleado,
+                    usuario: usuario,
+                    origen: origen,
+                    nombre_empleado: nombre_empleado,
+                    nombre_sup_sh_realizo: nombre_sup_sh_realizo,
+                    fecha_creacion_boleta: fecha_creacion_boleta,
+                    folio_boleta: folio_boleta,
+                    causa_boleta: causa_boleta,
+                    observaciones_boleta: observaciones_boleta,
+                    nombre_sup_produccion: nombre_sup_produccion,
+                    fecha_alta: fecha_alta},            
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    alert("entro3");
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 == "encontro")
+                            {                           
+                                navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia" ,"Aceptar");   
+                                //$("#myPopup").popup("open")
+                                /*$("#myPopup").popup("close");
+                                $('#textPUESTO_TRABAJO').val("");
+                                $('#textNUMERO_EMPLEADO').val("");
+                                $('#textAREA').val("");
+                                $('#textBOTAS_SEGURIDAD').val("No").change();
+                                $('#textCASCO').val("No").change();
+                                $('#textGUANTES').val("No").change();
+                                $('#textFAJA').val("No").change();
+                                $('#textGAFAS').val("No").change();
+                                $('#textRESPIRADOR3M6200').val("No").change();
+                                $('#textRESPIRADOR3M8210').val("No").change();
+                                $('#textTAPONESAUDITIVOS').val("No").change();
+                                $('#textMUNEQUERAS').val("No").change();
+                                $('#textOTROS').val("No").change();
+                                $('#textOBSERVACIONES').val("");
+                                $('#textNOMBRE_EMPLEADO').val("");*/
+                               
+                            }
+                        else
+                            {
+                            navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            }                        
+                    });                 
+                },
+                error: function(jq, txt){
+                    
+                    /*navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
 
+                    almacen.guardarRegistro(server.puesto_trabajo,server.numero_empleado,server.area,server.botas_seguridad,server.casco,server.guantes,server.faja,server.gafas,server.respirador_3m_6200,server.respirador_3m_8210,server.tapones_auditivos,server.munequeras,server.otros,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario,server.origen,server.fecha_alta,server.nombre_empleado,server.nombre_reviso.replace(/[^a-zA-Z 0-9.]+/g,' '));
+                               //$("#myPopup").popup("open")
+                                $("#myPopup").popup("close");
+                                $('#textPUESTO_TRABAJO').val("");
+                                $('#textNUMERO_EMPLEADO').val("");
+                                $('#textAREA').val("");
+                                $('#textBOTAS_SEGURIDAD').val("No").change();
+                                $('#textCASCO').val("No").change();
+                                $('#textGUANTES').val("No").change();
+                                $('#textFAJA').val("No").change();
+                                $('#textGAFAS').val("No").change();
+                                $('#textRESPIRADOR3M6200').val("No").change();
+                                $('#textRESPIRADOR3M8210').val("No").change();
+                                $('#textTAPONESAUDITIVOS').val("No").change();
+                                $('#textMUNEQUERAS').val("No").change();
+                                $('#textOTROS').val("No").change();
+                                $('#textOBSERVACIONES').val("");
+                                $('#textNOMBRE_EMPLEADO').val("");
+                               */ 
+                }
+            }).done(server.sincronizado_3);
 
 
     },
