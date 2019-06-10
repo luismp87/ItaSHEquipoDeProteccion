@@ -288,9 +288,21 @@ $.ajax({
                                 $('#textNOMBRE_EMPLEADO').val("");
                                */ 
                 }
-            }).done(server.sincronizado);
+            }).done(server.sincronizado_3);
 
 
+    },
+        sincronizado_3: function(msg){
+        /*if(msg == 1)
+        {
+            navigator.notification.alert("Los datos guardados se han sincronizado satisfactoriamente", null, "Sincronizado", "Aceptar");
+            almacen.gurdarHistorial(server.pr,server.di,server.th);//Guardar en Historial
+        }
+        else
+        {
+            navigator.notification.alert("Hubo un error al intentar sincronizar los datos guardados", null, "Error", "Aceptar");
+        }*/
+        //navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ", null, "Advertencia", "Aceptar");
     }
 
 
