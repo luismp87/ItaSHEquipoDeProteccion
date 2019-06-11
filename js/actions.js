@@ -281,8 +281,8 @@ var fn = {
         fn.fecha_creacion_boleta = $('#textFECHA_ALTA_BOLETA').val();
         fn.folio_boleta = $('#textFOLIO_BOLETA').val();
         fn.causa_boleta = $("input:radio[name=acto]:checked").val();
-        fn.observaciones_boleta = $('#textDESCRIPCION_REPORTE').val().replace(/[^a-zA-Z 0-9.]+/g,' ');
-        fn.nombre_sup_produccion = $('#textNOMBRE_DEL_SUPERVISOR').val().replace(/[^a-zA-Z 0-9.]+/g,' ');
+        fn.observaciones_boleta = $('#textDESCRIPCION_REPORTE').val()/*.replace(/[^a-zA-Z 0-9.]+/g,' ')*/;
+        fn.nombre_sup_produccion = $('#textNOMBRE_DEL_SUPERVISOR').val()/*.replace(/[^a-zA-Z 0-9.]+/g,' ')*/;
 
 
         var d = new Date();
