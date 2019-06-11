@@ -34,17 +34,15 @@ var fn = {
         $('#btnGuardarReg_3').tap(fn.GuardarReg_3);
         
         $('#textNUMERO_EMPLEADO_3').keypress(function (e) {
-    if (e.which == 13) {
-        alert('enter key is pressed');
-        fn.buscar_por_n_empleado;
-    }
-});
+            if (e.which == 13) {
+            alert('1');
+            fn.buscar_por_n_empleado();
+            alert('2');
+
+            }
+        });
 
         
-
-        
-
-
                
                 
         //PARA MOVIL
