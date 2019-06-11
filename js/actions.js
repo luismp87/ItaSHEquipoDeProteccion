@@ -32,6 +32,10 @@ var fn = {
         $('#BtnSalir_3').tap(fn.SalirYRestablecer_3); 
         $('#btn_buscar_por_n_empleado').tap(fn.buscar_por_n_empleado); 
         $('#btnGuardarReg_3').tap(fn.GuardarReg_3);
+        
+        $('#textNUMERO_EMPLEADO_3').keypress(fn.buscar_por_n_empleado);
+
+        
 
         
 
