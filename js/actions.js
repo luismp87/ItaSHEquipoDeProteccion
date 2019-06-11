@@ -33,7 +33,12 @@ var fn = {
         $('#btn_buscar_por_n_empleado').tap(fn.buscar_por_n_empleado); 
         $('#btnGuardarReg_3').tap(fn.GuardarReg_3);
         
-        $('#textNUMERO_EMPLEADO_3').keypress(fn.buscar_por_n_empleado);
+        $('#textNUMERO_EMPLEADO_3').keypress(function (e) {
+    if (e.which == 13) {
+        alert('enter key is pressed');
+        fn.buscar_por_n_empleado;
+    }
+});
 
         
 
