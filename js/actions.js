@@ -35,9 +35,9 @@ var fn = {
         
         $('#textNUMERO_EMPLEADO_3').keypress(function (e) {
             if (e.which == 13) {
-            alert('1');
+           
             fn.buscar_por_n_empleado();
-            alert('2');
+            
 
             }
         });
