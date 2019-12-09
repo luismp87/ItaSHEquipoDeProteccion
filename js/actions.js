@@ -23,7 +23,8 @@ var fn = {
         window.location.href = '#Menu';     
         }
         //PARA MOVIL
-        $('#btnautentificar').tap(fn.autentificarSQL);   
+        //$('#btnautentificar').tap(fn.autentificarSQL);   
+        $('#btnautentificar').tap(fn.autentificarSERVER);  
         $('#BtnSalir').tap(fn.SalirYRestablecer);        
         $('#btnGuardarReg').tap(fn.GuardarReg);
         $('#btn_ir_asignacion_epp').tap(fn.ir_asignacion_epp);  
@@ -89,6 +90,70 @@ var fn = {
                        navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Advertencia","Aceptar");///*PARAMOVIL    
                     }
         }
+    },
+    autentificarSERVER: function(){   
+
+if($('#origen').val() == "")
+{
+    navigator.notification.alert("Seleccione un origen",null,"Seleccione un origen","Aceptar");
+    return;
+}
+
+        var nom = $('#txtusuario').val().toLowerCase();
+        var passw = $('#txtcontrasena').val();
+        if(nom != '' && passw != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            $.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/autentificar',              
+                data: {usuario: nom, contrasena: passw},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 == "correcto")
+                            {   
+                           
+                           $('#textREVISO').val(""+ msg[i].valor2);
+                           $('#textREVISO_3').val(""+ msg[i].valor2);
+                           window.localStorage.setItem("revisa",""+ msg[i].valor2);
+                           window.localStorage.setItem("user",nom);
+                           window.localStorage.setItem("origen",$('#origen').val());
+                           $("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+                           $("#textORIGEN_2").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+                           $("#textORIGEN_3").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+                           $('#txtusuario').val(""); 
+                           $('#txtcontrasena').val("");
+                           $('#txtnumero_Empleado_realiza').val("");
+                                //window.location.href = '#Registro';
+                           window.location.href = '#Menu';                         
+
+                             
+                            navigator.notification.alert("Usuario y contraseña autentificados:  " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
+                            return;
+                            }
+                            else if(msg[i].valor2 == "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
+                            {
+                            navigator.notification.alert("El usuario no pertenece a SEGURIDAD E HIGIENE",null,"Error al Ingresar","Aceptar");
+                            return;                        
+                            }
+                            else
+                            {
+                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            }                        
+                    });                 
+                },
+                error: function(jq, txt){
+                    //alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                }
+            });
+        }
+        else{
+            navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
+            //alert("todos los campos son requeridos");
+        }   
     },
         autentificarSQL: function(){
         var usu = $('#txtusuario').val();      
