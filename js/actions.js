@@ -5,10 +5,10 @@ var fn = {
 	init: function(){ 
     $('#textREVISO').val(""+ window.localStorage.getItem("revisa"));
     $('#textREVISO_3').val(""+ window.localStorage.getItem("revisa"));          
-        if(window.localStorage.getItem("yamigrousuarios") != "SI")
+        /*if(window.localStorage.getItem("yamigrousuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
-        }
+        }*/
         
  
         if(fn.estaRegistrado() == false)
