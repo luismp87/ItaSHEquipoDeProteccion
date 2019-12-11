@@ -105,7 +105,7 @@ if($('#origen').val() == "")
             $.mobile.loading("show",{theme: 'b'});
             $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/autentificar',              
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/WebService1.asmx/autentificar',              
                 data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
