@@ -55,7 +55,7 @@ server.nombre_reviso = nombre_reviso;
  
 $.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/insertarreg',				
                 data: {puesto_trabajo: puesto_trabajo, 
 					numero_empleado: numero_empleado,
 					area: area,
@@ -155,7 +155,7 @@ $.ajax({
             //navigator.notification.alert("enviando ser: " + puesto_trabajo,null,"mensaje 2","Aceptar");              
 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg_en_movil',               
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/insertarreg_en_movil',               
                 data: { puesto_trabajo: puesto_trabajo},
                 dataType: "json",
                 success: function (msg){
@@ -218,7 +218,7 @@ var fecha_alta = server.fecha_alta;
 
 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg_3',                
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/insertarreg_3',                
                 data: {
                     numero_empleado: numero_empleado,
                     usuario: usuario,
@@ -304,7 +304,7 @@ $.ajax({
             //navigator.notification.alert("enviando ser: " + puesto_trabajo,null,"mensaje 2","Aceptar");              
 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/insertarreg_en_movil_3',               
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/insertarreg_en_movil_3',               
                 data: { numero_empleado: numero_empleado},
                 dataType: "json",
                 success: function (msg){

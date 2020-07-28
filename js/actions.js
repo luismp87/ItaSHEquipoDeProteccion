@@ -62,7 +62,7 @@ var fn = {
                 //$.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/enviarcatalogocompletodeusuarios',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/enviarcatalogocompletodeusuarios',              
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
@@ -105,7 +105,7 @@ if($('#origen').val() == "")
             $.mobile.loading("show",{theme: 'b'});
             $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/autentificar',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/autentificar',              
                 data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){

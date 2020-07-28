@@ -133,7 +133,7 @@ var almacen = {
 almacen.numero_Empleado_realiza =  $('#txtnumero_Empleado_realiza').val();
 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/validaNumeroEmpleado',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/validaNumeroEmpleado',              
                 data: {numeroEmpleado: almacen.numero_Empleado_realiza},
                 dataType: "json",
                 success: function (msg){
@@ -257,7 +257,7 @@ $.ajax({
 almacen.numero_Empleado =  $('#textNUMERO_EMPLEADO_3').val();
 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshequipodeproteccion/Service1.asmx/ConsultaNumeroEmpleado',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHEquipoDeProteccion/service1.asmx/ConsultaNumeroEmpleado',              
                 data: {numeroEmpleado: almacen.numero_Empleado},
                 dataType: "json",
                 success: function (msg){
